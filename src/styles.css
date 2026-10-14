@@ -234,3 +234,32 @@ body{font-size:16px}
 @keyframes scroll-pop{from{opacity:0;transform:translateY(8px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:760px){.scroll-top{right:16px;bottom:16px;width:44px;height:44px}}
 @media(prefers-reduced-motion:reduce){.heading-aside-icon,.art-star{animation:none}.panel,.side-nav a,.scroll-top{transition:none}}
+/* Extra-large reading scale requested for the full dashboard. */
+body{font-size:18px}
+.sidebar-label{font-size:12px}
+.side-nav a{font-size:16px;height:49px}
+.sidebar-foot{font-size:13px}
+.breadcrumb,.year-select{font-size:15px}
+.privacy-chip{font-size:13px}
+.page-heading h1{font-size:62px}
+.page-heading p{font-size:18px}
+.kicker,.panel-kicker{font-size:12px}
+.heading-aside{font-size:14px}
+.stat-head{font-size:15px}
+.stat-value{font-size:37px}
+.stat-foot{font-size:13px}
+.panel-head h2{font-size:24px}
+.panel-head p,.chart-label,.chart-summary strong small{font-size:14px}
+.chart-summary strong{font-size:25px}
+.select-pill select,.chart-badge,.chart-legend,.data-note{font-size:13px}
+.y-axis{font-size:12px}.x-label{font-size:10px}
+.spend-legend>div,.spend-legend b{font-size:14px}
+.donor-table th,.activity-panel th{font-size:12px}
+.donor-table td,.activity-panel td,.donor-name-cell,.activity-panel td>b{font-size:15px}
+.donor-foot,.table-foot{font-size:13px}
+.table-search input,.sort-select,.sort-select select,.export-button{font-size:14px}
+.stall-total-row strong{font-size:30px}
+.stall-total-row span,.stall-foot,.balance-panel>p{font-size:13px}
+.footer>span:nth-child(2),.footer-right{font-size:12px}
+@media(max-width:760px){.page-heading h1{font-size:50px}.panel-head h2{font-size:21px}.stat-value{font-size:30px}}
+@media(max-width:480px){.side-nav a{font-size:14px}.page-heading h1{font-size:42px}.page-heading p{font-size:15px}.stat-head{font-size:11px}.stat-value{font-size:24px}.stat-foot{font-size:10px}.panel-head h2{font-size:18px}.panel-head p,.donor-table td,.activity-panel td,.donor-name-cell,.activity-panel td>b{font-size:12px}.donor-table th,.activity-panel th{font-size:10px}.chart-summary strong{font-size:20px}.chart-label,.chart-badge,.chart-legend,.data-note{font-size:10px}.spend-legend>div,.spend-legend b{font-size:11px}}
