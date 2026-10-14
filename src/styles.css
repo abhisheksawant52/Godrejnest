@@ -279,13 +279,72 @@ body{font-size:18px}
 .panel-head h2,.panel-head p{line-height:1.35}
 @media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.stats-grid{grid-template-columns:1fr}.stat-card{min-height:130px}.stat-value{font-size:28px}.donor-head>div:first-child{min-width:0}.donor-tools{width:100%}.donor-table-scroll{max-height:55vh}}
-.festival-banner{width:min(100%,1180px);margin:0 auto 24px;border:1px solid #f0d69b;border-radius:16px;overflow:hidden;background:#fff7e8;box-shadow:0 16px 38px #70400d18;animation:fade-up .65s both}
-.festival-banner img{display:block;width:100%;height:auto}
-.festival-banner figcaption{padding:9px 14px;background:linear-gradient(90deg,#fff1ce,#ffe7c9);color:#77451e;font-size:12px;font-weight:700;letter-spacing:.03em}
-@media(max-width:600px){.festival-banner{margin-bottom:16px;border-radius:10px}.festival-banner figcaption{font-size:10px;padding:7px 10px}}
+
+
+
+
 /* Compact festival masthead keeps the dashboard summary in the first view. */
-.festival-banner{width:min(100%,1360px);height:clamp(150px,16vw,215px);margin:4px auto 18px;border-radius:14px}
-.festival-banner img{width:100%;height:100%;object-fit:cover;object-position:center 43%}
-@media(max-width:600px){.festival-banner{height:132px;margin:0 auto 14px;border-radius:9px}}
-.festival-banner{width:min(100%,1180px);height:clamp(170px,18vw,230px)}
-.festival-banner img{object-position:center 40%}
+
+
+
+
+
+/* Small-screen layout and touch targets. */
+.app-shell{min-width:0;overflow-x:clip}
+.main-content{min-width:0;width:100%}
+@media(max-width:760px){
+ .main-content{width:100%;margin:0;padding:8px 16px 28px}
+ .topbar{height:auto;min-height:56px;flex-wrap:wrap;gap:8px;padding:7px 0}
+ .breadcrumb{min-width:0;flex:1;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .topbar-right{gap:8px;margin-left:auto}
+ .privacy-chip,.topbar .divider{display:none}
+ .year-select{font-size:12px;gap:5px;white-space:nowrap}
+ .round-avatar{width:28px;height:28px;flex:0 0 28px}
+ .menu-toggle{width:40px;height:40px;display:grid;place-items:center;border-radius:9px;background:#e5f7e9;font-size:20px}
+ .sidebar{width:min(280px,calc(100vw - 44px));padding:20px 16px 16px}
+ .page-heading{padding:22px 0 16px}
+ .page-heading h1{font-size:clamp(38px,8vw,50px)}
+ 
+ .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .stat-card{min-width:0;min-height:132px;padding:14px}
+ .stat-value{font-size:clamp(22px,5vw,30px)}
+ .content-grid,.bottom-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+ .content-grid{margin-top:12px}
+ .panel{min-width:0;padding-left:16px;padding-right:16px}
+ .panel-head{gap:12px}
+ .chart-summary{flex-wrap:wrap;gap:12px}
+ .bar-chart{grid-template-columns:32px minmax(0,1fr);height:190px}
+ .chart-plot{min-width:0}
+ .chart-legend{flex-wrap:wrap;gap:7px 12px}
+ .donor-head{align-items:flex-start}
+ .donor-tools{width:100%;display:flex;flex-wrap:wrap;gap:8px}
+ .donor-search{flex:1 1 100%;min-width:0}
+ .sort-select{min-height:42px}
+ .export-button{min-height:42px}
+ .donor-table-scroll,.table-scroll{max-width:100%;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+ .donor-table-scroll{max-height:55vh}
+ .activity-panel table{min-width:620px}
+ .footer{flex-wrap:wrap;gap:10px}
+ .footer>span:nth-child(2){margin-left:0}
+ .footer-right{width:100%;margin-left:0;flex-wrap:wrap}
+}
+@media(max-width:520px){
+ .main-content{padding-left:12px;padding-right:12px}
+ .stats-grid{grid-template-columns:1fr}
+ .stat-card{min-height:116px}
+ .page-heading h1{font-size:39px}
+ .page-heading p{max-width:100%}
+ 
+ .panel{padding-left:13px;padding-right:13px}
+ .select-pill{min-height:40px}
+ .chart-summary>div{min-width:0}
+ .summary-divider{display:none}
+ .bar-chart{height:175px}
+ .donor-tools{align-items:stretch}
+ .donor-search{flex-basis:100%;height:44px}
+ .sort-select{flex:1;justify-content:space-between}
+ .export-button{flex:0 0 auto;padding:0 11px}
+ .activity-head{align-items:stretch}
+ .activity-head .table-search{align-self:stretch;width:100%;height:44px}
+ .bottom-grid{margin-top:12px}
+}
