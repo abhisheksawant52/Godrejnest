@@ -56,4 +56,39 @@ body{font-size:16px;color:#173b2a}
 .donor-table-scroll::-webkit-scrollbar{width:11px;height:11px}
 .donor-table-scroll::-webkit-scrollbar-thumb{background:#65b87b;border:3px solid #f1faf3;border-radius:10px}
 .donor-foot{padding-top:11px;color:#536b5b;font-size:12px;line-height:1.5}
-@media(max-width:780px){.donors-panel{padding:16px}.donor-head{align-items:flex-start;flex-direction:column}.donor-search{align-self:stretch;width:100%}.donor-search input{flex:1;width:auto}.donor-table-scroll{max-height:400px}}
+@media(max-width:780px){.donors-panel{padding:16px}.donor-head{align-items:flex-start;flex-direction:column}.donor-search{align-self:stretch;width:100%}.donor-search input{flex:1;width:auto}.donor-table-scroll{max-height:400px}}/* Brighter community colors, stronger branding, and smoother interactions. */
+:root{background:#effaf2;--green:#087a3c;--green-dark:#075d30;--ink:#163b27;--line:#d5eadb}
+body{background:#effaf2;color:#163b27}
+.sidebar{background:#fff;border-right-color:#cfe6d5}
+.brand{gap:12px}
+.brand-mark{width:56px;height:56px;stroke:#087a3c;stroke-width:1.8}
+.brand-mark .mark-spark{fill:#ffad19}
+.brand-name{font-size:15px;letter-spacing:.06em;color:#087a3c}
+.brand-name b{color:#e18d00;font-weight:700}
+.sidebar-label{color:#4c7458}
+.side-nav a:hover,.side-nav a.active{background:#dff5e5;color:#075d30}
+.navratri-art{background:#ddf4e2;color:#16753c}
+.navratri-art>b{color:#17482d}.navratri-art b i{color:#087a3c}
+.kicker-mark,.heading-aside-icon,.balance-flower{color:#f0a400}
+.stat-primary{background:#dcf5e2;border-color:#bfe5c8}
+.stat-balance{background:#fff2c9;border-color:#f2d982}
+.stat-icon{background:#c9efd2;color:#087a3c}
+.stall-icon,.stall-badge{background:#fff0bd;color:#a66a00}
+.balance-panel{background:#dcf5e2}
+.privacy-chip{background:#dcf5e2;border-color:#bfe5c8;color:#075d30}
+.panel-kicker{color:#237341}
+.chart-badge{background:#e7f8eb;color:#126735;border-color:#cfead5}
+.donor-table thead{background:#d5f0dc}
+.donor-table th{color:#075d30;background:#d5f0dc}
+.donor-table tbody tr:hover{background:#e1f6e6}
+.live-dot{background:#20a957;box-shadow:0 0 0 3px #dff5e5}
+.panel,.stat-card,.brand-mark,.side-nav a,.panel-link,.back-link,.table-search button,.menu-toggle{transition:background-color .22s ease,border-color .22s ease,color .22s ease,box-shadow .25s ease,transform .25s ease}
+.stat-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px #17633217}
+.panel:hover{box-shadow:0 8px 22px #17633212}
+.side-nav a:hover{transform:translateX(2px)}
+.panel-link:hover,.back-link:hover{color:#087a3c;gap:12px}
+.brand:hover .brand-mark{transform:scale(1.06)}
+.table-search button:hover{color:#087a3c;transform:scale(1.08)}
+::selection{background:#b9edc6;color:#123d24}
+@media(max-width:780px){.brand-mark{width:52px;height:52px}.brand-name{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.stat-card:hover,.side-nav a:hover,.brand:hover .brand-mark,.table-search button:hover{transform:none}.panel,.stat-card,.brand-mark,.side-nav a,.panel-link,.back-link,.table-search button,.menu-toggle{transition:none}}
