@@ -767,6 +767,30 @@
                          "date":  "14 Oct 2026",
                          "time":  "4:01 PM",
                          "remarks":  "Mata Ki Chowki"
+                     },
+                     {
+                         "name":  "Vaibhav Dikshit",
+                         "flat":  "A-1503",
+                         "amount":  "10000",
+                         "date":  "14 Oct 2026",
+                         "time":  "6:20 PM",
+                         "remarks":  ""
+                     },
+                     {
+                         "name":  "Haresh buch",
+                         "flat":  "B-1403/1404",
+                         "amount":  "11000",
+                         "date":  "14 Oct 2026",
+                         "time":  "6:56 PM",
+                         "remarks":  "Cash received from Chetan patil"
+                     },
+                     {
+                         "name":  "Last Year Balance",
+                         "flat":  "",
+                         "amount":  "10410",
+                         "date":  "14 Oct 2026",
+                         "time":  "10:20 PM",
+                         "remarks":  "Amount received from Sheetal Goad"
                      }
                  ],
     "stalls":  [
@@ -820,11 +844,18 @@
                          "amount":  "1944",
                          "paidTo":  "Magnetium Printers",
                          "remarks":  "Baner for Navratri"
+                     },
+                     {
+                         "date":  "14 Oct 2026",
+                         "item":  "Catering Advance",
+                         "amount":  "5000",
+                         "paidTo":  "Gupta Catering",
+                         "remarks":  "Gupta Catering Advance Token 5000"
                      }
                  ],
     "totals":  {
-                   "contributions":  118046,
+                   "contributions":  149456,
                    "stallFees":  8400,
-                   "expenses":  7264
+                   "expenses":  12264
                }
 }
