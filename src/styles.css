@@ -379,3 +379,17 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
 .data-note{background:#2c2818;border-color:#a78333;color:#f2dfac}.note-mark{background:#ecc45b;color:#2d2714}.scroll-top{background:linear-gradient(135deg,#62ed93,#16a95e);color:#092b18;box-shadow:0 8px 24px #15aa5a55}
 .export-button{background:linear-gradient(135deg,#3cda7a,#159d54);color:#082c18}.export-button:hover{background:#6af19a;color:#062415}.sort-select,.export-button{border-radius:9px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+/* Contrast corrections for remaining small labels and badges on dark surfaces. */
+.main-content{color:#e7f1e9}
+.sidebar-label,.sidebar-foot,.art-caption{color:#b4c8b9}
+.navratri-art>b,.navratri-art b i{color:#fff0c2}
+.privacy-chip{background:#163c29;border-color:#34774e;color:#a1f6b9}
+.chart-badge{background:#173d2a;border-color:#32784a;color:#a2f4b6}
+.panel-menu,.expense-avatar{color:#b6e4c4}
+.date-text{color:#c1d9c7}.detail-text{color:#c1d0c5}
+.table-foot{color:#bdd1c2}.table-foot b{color:#94efa9}
+.stall-badge{background:#453718;color:#ffe07a}
+.stall-mini-bars span{color:#c8d7cc}
+.balance-art{color:#366047}
+.table-search button{color:#c6ddcb}.table-search button:hover{color:#8df0a9}
+.balance-flower,.donut-center-flower{color:#ffd366}
