@@ -279,3 +279,7 @@ body{font-size:18px}
 .panel-head h2,.panel-head p{line-height:1.35}
 @media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.stats-grid{grid-template-columns:1fr}.stat-card{min-height:130px}.stat-value{font-size:28px}.donor-head>div:first-child{min-width:0}.donor-tools{width:100%}.donor-table-scroll{max-height:55vh}}
+.festival-banner{width:min(100%,1180px);margin:0 auto 24px;border:1px solid #f0d69b;border-radius:16px;overflow:hidden;background:#fff7e8;box-shadow:0 16px 38px #70400d18;animation:fade-up .65s both}
+.festival-banner img{display:block;width:100%;height:auto}
+.festival-banner figcaption{padding:9px 14px;background:linear-gradient(90deg,#fff1ce,#ffe7c9);color:#77451e;font-size:12px;font-weight:700;letter-spacing:.03em}
+@media(max-width:600px){.festival-banner{margin-bottom:16px;border-radius:10px}.festival-banner figcaption{font-size:10px;padding:7px 10px}}
