@@ -467,3 +467,40 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
  .donors-panel .panel-head h2,.activity-panel .panel-head h2{font-size:13px}
  .donors-panel .panel-kicker,.activity-panel .panel-kicker{font-size:8px}
 }
+/* Mobile register rows match the desktop ledger without boxed entries. */
+@media(max-width:760px){
+ .donor-table-scroll{max-height:60vh;overflow-y:auto;overflow-x:hidden}
+ .donor-table,.activity-panel table{display:block;width:100%;min-width:0;border-collapse:collapse}
+ .donor-table thead,.activity-panel thead{display:block;position:sticky;top:0;z-index:3}
+ .donor-table thead tr,.donor-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr) max-content max-content;align-items:center;min-width:0}
+ .donor-table th,.donor-table td{display:none;min-width:0;padding:10px 7px;border:0!important;background:transparent!important}
+ .donor-table th:nth-child(1),.donor-table th:nth-child(3),.donor-table th:nth-child(4),.donor-table td:nth-child(1),.donor-table td:nth-child(3),.donor-table td:nth-child(4){display:block}
+ .donor-table th{color:#a9f1b8;font-size:9px;white-space:nowrap}
+ .donor-table tbody tr{border:0;border-bottom:1px solid #36503e;border-radius:0;background:transparent!important;overflow:hidden}
+ .donor-table td{font-size:11px;line-height:1.3;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+ .donor-table td:nth-child(1){font-weight:700;color:#a1f2b3!important}
+ .donor-table td:nth-child(3),.donor-table td:nth-child(4){text-align:right}
+ .donor-table td::before{display:none!important}
+ .donor-table .empty-row{display:block;grid-column:1/-1;padding:14px;white-space:normal;text-align:center}
+ .activity-panel .table-scroll{overflow-x:hidden}
+ .activity-panel table thead tr,.activity-panel tbody tr{display:grid;grid-template-columns:minmax(0,1fr) max-content max-content;align-items:center;min-width:0}
+ .activity-panel th,.activity-panel td{display:none;min-width:0;padding:10px 7px;border:0!important;background:transparent!important}
+ .activity-panel th:nth-child(1),.activity-panel th:nth-child(2),.activity-panel th:nth-child(4),.activity-panel td:nth-child(1),.activity-panel td:nth-child(2),.activity-panel td:nth-child(4){display:block}
+ .activity-panel th{color:#a9f1b8;font-size:9px;white-space:nowrap}
+ .activity-panel tbody{display:block}
+ .activity-panel tbody tr{border:0;border-bottom:1px solid #36503e;border-radius:0;background:transparent!important;overflow:hidden}
+ .activity-panel td{font-size:11px;line-height:1.3;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+ .activity-panel td::before{display:none!important}
+ .activity-panel td:first-child{display:block}
+ .activity-panel td:first-child .expense-avatar{display:none}
+ .activity-panel td:first-child b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .activity-panel td:nth-child(2),.activity-panel td:nth-child(4){text-align:right}
+ .activity-panel .empty-row{display:block;grid-column:1/-1;padding:14px;white-space:normal;text-align:center}
+ .donor-foot{font-size:10px;line-height:1.4}
+}
+@media(max-width:390px){
+ .donor-table th,.activity-panel th{font-size:8px;padding:9px 5px}
+ .donor-table td,.activity-panel td{font-size:10px;padding:9px 5px}
+ .stat-card{min-height:116px}
+}
+@media(hover:none){.panel:hover,.stat-card:hover,.side-nav a:hover,.bar-column:hover{transform:none;box-shadow:none}}
