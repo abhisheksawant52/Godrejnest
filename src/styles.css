@@ -354,3 +354,28 @@ body{font-size:18px}
  .side-nav a{min-width:0;height:46px;padding:0 9px;gap:7px;font-size:12px;white-space:nowrap}
  .side-nav a svg{flex:0 0 16px}
 }
+/* Deep forest surfaces with vivid festival accents. */
+:root{--ink:#e8f2eb;--muted:#a4b7aa;--line:#2a4035;--green:#57e18b;--green-dark:#20b96a}
+html,body{background:#0e1714;color:#e7f1e9}
+body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311 100%)}
+.sidebar{background:linear-gradient(180deg,#13221b,#0f1a16);border-right-color:#294336;box-shadow:6px 0 28px #0005}
+.sidebar-label,.sidebar-foot{color:#9db5a4}
+.sidebar>.brand .brand-mark{stroke:#47e185}
+.sidebar>.brand .brand-name{color:#e8f5ec}.sidebar>.brand .brand-name b{color:#ffd166}
+.side-nav a{color:#bdd0c2}.side-nav a.active{background:linear-gradient(100deg,#145f39,#187448);color:#effff3;box-shadow:inset 4px 0 #67f295}
+.side-nav a:hover{background:#213b2d;color:#fff}
+.navratri-art{background:linear-gradient(135deg,#203f2e,#493017);color:#e8ce88}.art-caption{color:#d1c59d}
+.topbar{border-color:#2a4035}.breadcrumb{color:#c6d9cc}.breadcrumb b{color:#f2fff5}.topbar-right{color:#d7e8dc}.privacy-chip{background:#163c29;color:#80efa5;border-color:#287649}.year-select{color:#e3f1e7}.round-avatar{background:#23533a;color:#b9ffce}
+.page-heading h1{color:#f4f9f5}.page-heading h1 em{color:#72ed9c}.page-heading p{color:#bdd0c2}.kicker,.panel-kicker{color:#85e8a5}.heading-aside{color:#bbcebF}.heading-aside b{color:#f7da83}
+.panel{background:#17251f;border-color:#2b4437;box-shadow:0 8px 28px #0003}.trend-panel{background:linear-gradient(145deg,#182820,#14221c)}.breakdown-panel{background:linear-gradient(145deg,#1e251d,#251d17)}.donors-panel{background:linear-gradient(145deg,#172721,#15221e)}.activity-panel{background:linear-gradient(145deg,#1d241f,#251c19)}.stalls-panel{background:linear-gradient(145deg,#25251c,#312818)}.balance-panel{background:linear-gradient(135deg,#153a2a,#1e4935)}
+.panel-head h2,.balance-panel h2{color:#eff8f1}.panel-head p,.balance-panel>p{color:#aec2b3}.panel:hover{border-color:#4a8860;box-shadow:0 15px 38px #0005}
+.stat-card{background:#192820;border-color:#354a3d;color:#edf6ef}.stat-head{color:#c0d2c4}.stat-value{color:#f1fff4}.stat-foot{color:#b6cabb}.stat-primary{background:linear-gradient(130deg,#54e98c,#1cb767);border-color:#65f29a;box-shadow:0 12px 32px #16c66b35}.stat-primary .stat-head,.stat-primary .stat-value,.stat-primary .stat-foot{color:#0c321e}.stat-primary .stat-icon{background:#a7ffbf;color:#07552d}
+.stat-card:nth-child(2){background:linear-gradient(135deg,#301e1b,#43231d);border-color:#ec7958}.stat-card:nth-child(2) .stat-value{color:#ffad86}.stat-card:nth-child(3){background:linear-gradient(135deg,#302918,#433718);border-color:#e5b94c}.stat-card:nth-child(3) .stat-value{color:#ffda70}.stat-card:nth-child(4){background:linear-gradient(135deg,#17312d,#1c403a);border-color:#50bdb0}.stat-card:nth-child(4) .stat-value{color:#79e6d8}
+.chart-label,.chart-summary strong{color:#e4f2e8}.chart-summary strong small{color:#9eb5a5}.chart-badge{background:#163e2a;color:#86f0a8;border-color:#2d7648}.select-pill,.sort-select,.table-search{background:#102019;border-color:#3a5846;color:#dbece0}.select-pill select,.sort-select select,.table-search input{color:#e6f3e9;background:transparent}.table-search input::placeholder{color:#91aa9a}.table-search:focus-within,.sort-select:focus-within{border-color:#65da8b;box-shadow:0 0 0 3px #35ad6330}
+.y-axis,.x-label,.chart-legend,.bar-value{color:#aec4b4}.grid-lines i{border-color:#2b4437}.bar{background:linear-gradient(180deg,#80efa5,#32bb70)}.bar-column:nth-child(3n) .bar{background:linear-gradient(180deg,#80e9df,#40bdb0)}.bar-column:nth-child(4n) .bar{background:linear-gradient(180deg,#ffd968,#e79f32)}.bar-column:hover .bar-value{color:#f5fff7}
+.donut-inner{background:#17251f}.donut-inner span{color:#a8bdad}.donut-inner b{color:#f3fff5}.spend-legend>div{color:#d1e0d5}.spend-legend b{color:#f4faf5}.spend-square{box-shadow:0 0 0 3px #ffffff12}.panel-link,.back-link{color:#8bedaa}
+.donor-table-scroll,.table-scroll{background:#111d17;border-color:#304a39}.donor-table th,.activity-panel th{background:#23663d;color:#effff2;border-color:#39764d}.donor-table td,.activity-panel td{background:#15231b;color:#d7e7db;border-color:#2a4033}.donor-table tbody tr:nth-child(even) td{background:#192920}.donor-table tbody tr:hover td,.activity-panel tbody tr:hover td{background:#203a2a}.donor-name-cell,.donor-amount{color:#82eca2!important}.donor-foot,.table-foot{color:#a9beaf;border-color:#304539}.amount-out{color:#ff9e7e!important}.empty-row{color:#c4d4c9!important}
+.stall-total-row strong{color:#ffe17a}.stall-total-row span,.stall-foot{color:#d4c6a0}.stall-foot b{color:#8ceb9f}.balance-panel h2 em{color:#ffdb76}.footer{border-color:#2b4236}.footer>span:nth-child(2),.footer-right{color:#a7b9ab}.footer .brand-name{color:#c9e3d1}.footer .brand-name b{color:#f5cd6d}
+.data-note{background:#2c2818;border-color:#a78333;color:#f2dfac}.note-mark{background:#ecc45b;color:#2d2714}.scroll-top{background:linear-gradient(135deg,#62ed93,#16a95e);color:#092b18;box-shadow:0 8px 24px #15aa5a55}
+.export-button{background:linear-gradient(135deg,#3cda7a,#159d54);color:#082c18}.export-button:hover{background:#6af19a;color:#062415}.sort-select,.export-button{border-radius:9px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
