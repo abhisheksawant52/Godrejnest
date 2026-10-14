@@ -519,3 +519,16 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
 .donor-table-scroll::-webkit-scrollbar-track{background:#203329;border-radius:10px}
 .donor-table-scroll::-webkit-scrollbar-thumb{background:#55d77d;border:3px solid #203329;border-radius:10px}
 .donor-table-scroll::-webkit-scrollbar-thumb:hover{background:#8af3a5}
+/* Final readability pass for secondary text in the dark interface. */
+:root{--muted:#c3d3c8;--line:#385344}
+.panel-head p,.page-heading p,.heading-aside,.chart-label,.chart-summary strong small,.chart-legend,.y-axis,.x-label,.bar-value,.donor-foot,.table-foot,.footer>span:nth-child(2),.footer-right{color:#c6d8cc}
+.sidebar-label,.sidebar-foot,.art-caption{color:#c1d5c7}
+.date-text,.detail-text,.stall-total-row span,.stall-foot,.donut-inner span{color:#d0dfd4}
+.table-search input::placeholder{color:#b4c9ba;opacity:1}
+.privacy-chip,.chart-badge{color:#b2ffc4}
+.donor-table th,.activity-panel th{color:#d6ffe0}
+.donor-table td,.activity-panel td{color:#e4f1e8}
+.donor-table tbody tr:hover td,.activity-panel tbody tr:hover td{color:#fff}
+.data-note{color:#fff0c2;background:#342f1c;border-color:#d5aa43}
+.note-mark{background:#ffd768;color:#28210f}
+@media(max-width:760px){.donor-foot,.table-foot,.panel-head p{color:#d0dfd4}}
