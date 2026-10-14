@@ -348,3 +348,9 @@ body{font-size:18px}
  .activity-head .table-search{align-self:stretch;width:100%;height:44px}
  .bottom-grid{margin-top:12px}
 }
+/* Arrange mobile navigation links in two horizontal rows. */
+@media(max-width:760px){
+ .side-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .side-nav a{min-width:0;height:46px;padding:0 9px;gap:7px;font-size:12px;white-space:nowrap}
+ .side-nav a svg{flex:0 0 16px}
+}
