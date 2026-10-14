@@ -168,3 +168,50 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .sidebar>.brand{gap:13px}
 .sidebar>.brand .brand-mark{width:56px;height:56px}
 .sidebar>.brand .brand-name{font-size:14px}
+/* Brighter, higher-contrast brand and dashboard colors. */
+.sidebar>.brand{gap:14px}
+.sidebar>.brand .brand-mark{width:72px;height:72px;stroke:#078b4c}
+.sidebar>.brand .brand-name{font-size:18px;letter-spacing:.035em;color:#12613a}
+.sidebar>.brand .brand-name b{color:#db8a10}
+.page-heading h1{font-size:54px;color:#123f2a}
+.stat-primary{background:linear-gradient(135deg,#d8f8df 0%,#b8efc7 100%);border-color:#65c783;box-shadow:0 12px 30px #168b4520}
+.stat-primary .stat-head,.stat-primary .stat-value,.stat-primary .stat-foot{color:#12472b}
+.stat-primary .stat-icon{background:#91e6a8;color:#125c34}
+.stat-card:nth-child(2){background:linear-gradient(135deg,#fff 0%,#fff0e9 100%);border-color:#f1a183}
+.stat-card:nth-child(3){background:linear-gradient(135deg,#fffef6 0%,#fff2c7 100%);border-color:#edc45b}
+.stat-card:nth-child(4){background:linear-gradient(135deg,#f2fffc 0%,#d8f5ee 100%);border-color:#71c5ba}
+.side-nav a.active{background:#d9f4df;color:#087a3c;box-shadow:inset 4px 0 #14a653}
+.kicker-mark,.heading-aside-icon{color:#ed9a26}
+@media(max-width:760px){.page-heading h1{font-size:46px}}
+@media(max-width:480px){.sidebar>.brand .brand-mark{width:64px;height:64px}.sidebar>.brand .brand-name{font-size:16px}.page-heading h1{font-size:38px}}
+/* Larger, easier-to-read type throughout the ledger. */
+body{font-size:16px}
+.sidebar-label{font-size:10px;letter-spacing:.13em}
+.side-nav a{font-size:14px;height:46px}
+.sidebar-foot{font-size:11px}
+.topbar,.breadcrumb,.year-select{font-size:13px}
+.privacy-chip{font-size:11px}
+.page-heading h1{font-size:58px}
+.page-heading p{font-size:15px;line-height:1.55}
+.kicker,.panel-kicker{font-size:10px;letter-spacing:.14em}
+.heading-aside{font-size:12px}
+.stat-head{font-size:13px}
+.stat-value{font-size:34px}
+.stat-foot{font-size:11px}
+.panel-head h2{font-size:21px}
+.panel-head p,.chart-label,.chart-summary strong small{font-size:12px}
+.chart-summary strong{font-size:22px}
+.select-pill select,.chart-badge,.chart-legend,.data-note{font-size:11px}
+.y-axis{font-size:10px}
+.x-label{font-size:9px}
+.spend-legend>div,.spend-legend b{font-size:12px}
+.donor-table th,.activity-panel th{font-size:10px}
+.donor-table td,.activity-panel td{font-size:13px}
+.donor-name-cell,.activity-panel td>b{font-size:13px}
+.donor-foot,.table-foot{font-size:11px}
+.table-search input,.sort-select,.sort-select select,.export-button{font-size:12px}
+.stall-total-row strong{font-size:27px}
+.stall-total-row span,.stall-foot,.balance-panel>p{font-size:11px}
+.footer>span:nth-child(2),.footer-right{font-size:10px}
+@media(max-width:760px){.page-heading h1{font-size:46px}.panel-head h2{font-size:19px}.stat-value{font-size:27px}}
+@media(max-width:480px){.side-nav a{font-size:13px}.page-heading h1{font-size:39px}.page-heading p{font-size:14px}.stat-head{font-size:10px}.stat-value{font-size:22px}.stat-foot{font-size:9px}.panel-head h2{font-size:17px}.panel-head p,.donor-table td,.activity-panel td{font-size:11px}.donor-table th,.activity-panel th{font-size:9px}.chart-summary strong{font-size:18px}.spend-legend>div,.spend-legend b{font-size:10px}}
