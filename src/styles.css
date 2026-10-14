@@ -143,3 +143,28 @@ body{background:radial-gradient(ellipse at 84% 0%,#e0f5e6 0,transparent 34%),#ef
 @media(max-width:1150px){.main-content{width:calc(100% - 215px);margin-left:215px;max-width:none;padding-left:25px;padding-right:25px}}
 @media(max-width:780px){.main-content{width:100%;margin-left:0;padding-left:18px;padding-right:18px}}
 @media(max-width:480px){.main-content{padding-left:13px;padding-right:13px}}
+/* Friendly color accents and clearer table controls */
+:root{--green:#28644e;--green-dark:#1f503e;--ink:#293b31;--muted:#77857b;--line:#e6ebe4;--coral:#d97858;--gold:#d2a442;--teal:#3f9991;--lavender:#8875b4}
+body{background:linear-gradient(135deg,#f8faf5 0%,#f5f7f2 48%,#fff8f2 100%)}
+.sidebar{background:linear-gradient(180deg,#fff 0%,#f8fbf7 100%)}
+.side-nav a.active{background:#e8f3ea;color:#28644e;box-shadow:inset 3px 0 #53a174}
+.side-nav a:nth-child(2):hover{background:#fff1e9;color:#ba6546}.side-nav a:nth-child(3):hover{background:#eef4ff;color:#5876a7}.side-nav a:nth-child(4):hover{background:#f5effc;color:#8064a6}
+.navratri-art{background:linear-gradient(135deg,#edf5e8,#fff2df);color:#45684b}
+.stat-card{border-top:3px solid #66a77e;transition:transform .18s ease,box-shadow .18s ease}.stat-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #345b3b16}.stat-card:nth-child(2){border-top-color:#e48461}.stat-card:nth-child(3){border-top-color:#e0b34f}.stat-card:nth-child(4){border-top-color:#65aaa4}
+.stat-primary{background:linear-gradient(130deg,#f0f8ed,#e7f2e8)}.stat-balance{background:linear-gradient(130deg,#edf8f5,#e6f3f1)}
+.panel{border-color:#e5eae2;box-shadow:0 5px 18px #36564008}.trend-panel{background:linear-gradient(145deg,#fff,#f9fcf7)}.breakdown-panel{background:linear-gradient(145deg,#fff,#fffaf3)}.donors-panel{background:linear-gradient(145deg,#fff,#f8fbff)}.activity-panel{background:linear-gradient(145deg,#fff,#fffaf8)}.stalls-panel{background:linear-gradient(145deg,#fff,#fff9e9)}
+.bar{background:linear-gradient(180deg,#66aa7e,#3e8060)}.bar-column:nth-child(3n) .bar{background:linear-gradient(180deg,#72b6af,#458e87)}.bar-column:nth-child(4n) .bar{background:linear-gradient(180deg,#e7b95c,#cf9343)}
+.donor-table tbody tr:hover,.activity-panel tbody tr:hover{background:#f2f8f3}.donor-tools{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}.sort-select{height:34px;padding:0 9px;display:flex;align-items:center;gap:6px;border:1px solid #e4e9e2;border-radius:7px;background:#fff;color:#829087;font-size:10px}.sort-select select{border:0;outline:0;background:transparent;color:#385441;font-weight:600;font-size:10px;cursor:pointer}.export-button{height:34px;border:0;border-radius:7px;padding:0 12px;background:#28644e;color:#fff;font-size:10px;font-weight:700;cursor:pointer;transition:background .15s,transform .15s}.export-button:hover{background:#1f503e;transform:translateY(-1px)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #6eb7a4;outline-offset:2px}
+@media(max-width:760px){.donor-tools{width:100%;justify-content:flex-start}.donor-search{flex:1;min-width:160px}.sort-select{flex:0 0 auto}.export-button{margin-left:auto}}
+@media print{.sidebar,.topbar,.menu-toggle,.donor-tools,.table-search,.select-pill,.panel-link,.back-link{display:none!important}body{background:#fff}.main-content{margin:0;padding:0}.panel,.stat-card{box-shadow:none;break-inside:avoid}.donor-table-scroll,.table-scroll{overflow:visible;max-height:none}.footer{color:#777}}
+/* Keep the daily date ticks below the bars and prevent them from colliding. */
+.chart-plot{overflow:visible}
+.bars{inset:0 0 20px}
+.x-label{bottom:-20px;z-index:2}
+.chart-legend{margin-top:11px}
+@media(max-width:480px){.bar-chart{height:166px}.x-label{font-size:8px}.chart-legend{margin-top:12px}}
+/* Give the main Godrej Nest brand mark more presence. */
+.sidebar>.brand{gap:13px}
+.sidebar>.brand .brand-mark{width:56px;height:56px}
+.sidebar>.brand .brand-name{font-size:14px}
