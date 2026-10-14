@@ -405,3 +405,28 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
  .mobile-nav a.active svg{color:#e4ffeb}
  html{scroll-padding-top:145px}
 }
+/* Phone navigation fits on one line; tables become readable stacked cards. */
+@media(max-width:760px){
+ .mobile-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:6px}
+ .mobile-nav a{min-width:0;min-height:43px;justify-content:center;gap:4px;padding:0 2px;font-size:10px;white-space:nowrap}
+ .mobile-nav a svg{width:14px;height:14px;flex-basis:14px}
+ .donor-table-scroll,.table-scroll{overflow-x:hidden;max-width:100%}
+ .donor-table,.activity-panel table{display:block;width:100%;min-width:0}
+ .donor-table thead,.activity-panel thead{display:none}
+ .donor-table tbody,.activity-panel tbody{display:grid;gap:9px}
+ .donor-table tr,.activity-panel tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));min-width:0;overflow:hidden;border:1px solid #385543;border-radius:11px;background:#15231b}
+ .donor-table td,.activity-panel td{display:flex;min-width:0;flex-direction:column;gap:3px;padding:9px 11px;border:0!important;background:transparent!important;white-space:normal;overflow-wrap:anywhere}
+ .donor-table td:not(.empty-row)::before,.activity-panel td:not(.empty-row)::before{content:attr(data-label);color:#83c994;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+ .donor-table td:first-child,.donor-table td:last-child,.activity-panel td:first-child,.activity-panel td:nth-child(3){grid-column:1/-1}
+ .donor-table .donor-name-cell{font-size:15px;color:#a1f2b3!important}
+ .donor-table .empty-row,.activity-panel .empty-row{grid-column:1/-1;display:block;padding:16px}
+ .activity-panel table{min-width:0}
+ .activity-panel td.amount-cell{align-items:flex-start;text-align:left}
+ .donor-table-scroll{max-height:60vh}
+ .donor-foot{line-height:1.45}
+}
+@media(max-width:400px){
+ .mobile-nav{gap:3px;padding:5px}
+ .mobile-nav a{font-size:9px;gap:3px}
+ .mobile-nav a svg{width:13px;height:13px;flex-basis:13px}
+}
