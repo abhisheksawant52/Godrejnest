@@ -532,3 +532,9 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
 .data-note{color:#fff0c2;background:#342f1c;border-color:#d5aa43}
 .note-mark{background:#ffd768;color:#28210f}
 @media(max-width:760px){.donor-foot,.table-foot,.panel-head p{color:#d0dfd4}}
+/* Stronger mobile column headers for donor and payment rows. */
+@media(max-width:760px){
+ .donor-table th,.activity-panel th{display:block!important;background:#15512f!important;color:#fff!important;font-size:11px;font-weight:800;letter-spacing:.08em;text-shadow:0 1px 2px #0005;border-bottom:2px solid #5fe286!important}
+ .donor-table th:nth-child(1),.donor-table th:nth-child(3),.donor-table th:nth-child(4),.donor-table th:nth-child(5),.activity-panel th:nth-child(1),.activity-panel th:nth-child(2),.activity-panel th:nth-child(4){text-align:left}
+}
+@media(max-width:390px){.donor-table th,.activity-panel th{font-size:10px}}
