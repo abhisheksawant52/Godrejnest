@@ -430,3 +430,24 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
  .mobile-nav a{font-size:9px;gap:3px}
  .mobile-nav a svg{width:13px;height:13px;flex-basis:13px}
 }
+/* Mobile refinements: compact horizontal summaries and unboxed donor rows. */
+@media(max-width:760px){
+ .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .stat-card{min-height:128px;padding:12px;border-radius:12px}
+ .stat-head{font-size:11px;line-height:1.25}
+ .stat-value{font-size:clamp(19px,5.2vw,26px);line-height:1.15}
+ .stat-foot{font-size:10px;line-height:1.25}
+ .donor-head>div:first-child h2{white-space:nowrap;font-size:18px}
+ .donor-table tbody{gap:0}
+ .donor-table tr{border:0;border-bottom:1px solid #36503e;border-radius:0;background:transparent!important;overflow:visible}
+ .donor-table td{background:transparent!important}
+ .donor-table td:last-child{border-bottom:1px solid #2c4335!important}
+}
+@media(min-width:560px) and (max-width:760px){.stats-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.stat-card{padding:12px 10px}}
+@media(max-width:390px){
+ .stat-card{padding:10px;min-height:120px}
+ .stat-head{font-size:10px}
+ .stat-value{font-size:19px}
+ .stat-foot{font-size:9px}
+ .donor-head>div:first-child h2{font-size:16px}
+}
