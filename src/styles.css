@@ -504,3 +504,18 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
  .stat-card{min-height:116px}
 }
 @media(hover:none){.panel:hover,.stat-card:hover,.side-nav a:hover,.bar-column:hover{transform:none;box-shadow:none}}
+/* Include contribution time in the compact phone register and outline the table. */
+@media(max-width:760px){
+ .donor-table-scroll{border:1px solid #42634b;border-radius:10px;background:#101c16;box-shadow:inset 0 1px 4px #0003}
+ .donor-table thead tr,.donor-table tbody tr{grid-template-columns:minmax(0,1fr) max-content max-content max-content}
+ .donor-table th:nth-child(5),.donor-table td:nth-child(5){display:block}
+ .donor-table tbody tr{border-bottom:1px solid #36503e}
+ .donor-table tbody tr:last-child{border-bottom:0}
+}
+@media(max-width:390px){.donor-table th,.donor-table td{padding-left:4px;padding-right:4px}}
+/* Make the contribution list scrollbar visible against the dark register. */
+.donor-table-scroll{scrollbar-width:thin;scrollbar-color:#55d77d #203329;overscroll-behavior:contain}
+.donor-table-scroll::-webkit-scrollbar{width:12px;height:12px}
+.donor-table-scroll::-webkit-scrollbar-track{background:#203329;border-radius:10px}
+.donor-table-scroll::-webkit-scrollbar-thumb{background:#55d77d;border:3px solid #203329;border-radius:10px}
+.donor-table-scroll::-webkit-scrollbar-thumb:hover{background:#8af3a5}
