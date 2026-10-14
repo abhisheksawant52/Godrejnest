@@ -393,3 +393,15 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
 .balance-art{color:#366047}
 .table-search button{color:#c6ddcb}.table-search button:hover{color:#8df0a9}
 .balance-flower,.donut-center-flower{color:#ffd366}
+/* Persistent touch navigation for phone layouts. */
+.mobile-nav{display:none}
+@media(max-width:760px){
+ .sidebar,.menu-toggle{display:none!important}
+ .mobile-nav{position:sticky;top:0;z-index:8;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:7px 0 12px;padding:8px;border:1px solid #34503e;border-radius:13px;background:#111e18ed;backdrop-filter:blur(14px);box-shadow:0 8px 24px #0004}
+ .mobile-nav a{min-height:43px;display:flex;align-items:center;gap:8px;padding:0 11px;border:1px solid #2e4838;border-radius:9px;color:#d5e7db;font-size:13px;font-weight:600;transition:background .18s ease,color .18s ease,transform .18s ease}
+ .mobile-nav a svg{width:16px;height:16px;flex:0 0 16px;color:#82e99e}
+ .mobile-nav a:hover{background:#1d3928;transform:translateY(-1px)}
+ .mobile-nav a.active{background:linear-gradient(110deg,#1d7a45,#1f9c56);border-color:#50d27a;color:#f3fff6;box-shadow:0 4px 14px #18a45132}
+ .mobile-nav a.active svg{color:#e4ffeb}
+ html{scroll-padding-top:145px}
+}
