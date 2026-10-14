@@ -92,3 +92,54 @@ body{background:#effaf2;color:#163b27}
 ::selection{background:#b9edc6;color:#123d24}
 @media(max-width:780px){.brand-mark{width:52px;height:52px}.brand-name{font-size:14px}}
 @media(prefers-reduced-motion:reduce){.stat-card:hover,.side-nav a:hover,.brand:hover .brand-mark,.table-search button:hover{transform:none}.panel,.stat-card,.brand-mark,.side-nav a,.panel-link,.back-link,.table-search button,.menu-toggle{transition:none}}
+/* Rich color and high density layout polish */
+:root{--green:#087a3c;--green-dark:#07572c;--ink:#123821;--muted:#496553;--line:#cfe4d4;background:#eff8f1;color:#123821}
+html{scroll-padding-top:110px;text-rendering:geometricPrecision}
+body{background:radial-gradient(ellipse at 84% 0%,#e0f5e6 0,transparent 34%),#eff8f1;color:#123821}
+.main-content{width:min(1900px,calc(100vw - 240px));max-width:none;margin-left:max(240px,calc((100vw - 1900px)/2 + 120px));padding-left:clamp(32px,3vw,64px);padding-right:clamp(32px,3vw,64px)}
+.sidebar{background:linear-gradient(180deg,#ffffff 0%,#f5fff7 100%);border-right-color:#c5e3cd;box-shadow:5px 0 24px #145c2b0a}
+.brand-mark{stroke:#087a3c;filter:drop-shadow(0 2px 4px #087a3c20)}
+.brand-name{color:#07572c}.brand-name b{color:#d88700}
+.topbar{border-color:#cfe4d4}.breadcrumb,.year-select{color:#496553}
+.privacy-chip{background:#d7f3de;border-color:#b6e4c2;color:#07572c}
+.page-heading h1{color:#103d23}.page-heading h1 em{color:#078241}
+.kicker,.panel-kicker{color:#187540}
+.kicker-mark,.heading-aside-icon,.balance-flower{color:#ed9d00}
+.stat-card,.panel{border-radius:10px;box-shadow:0 4px 18px #155b2a0c}
+.stat-primary{background:linear-gradient(135deg,#087a3c 0%,#0c984a 100%);border-color:#087a3c;box-shadow:0 12px 30px #087a3c24}
+.stat-primary .stat-head,.stat-primary .stat-value,.stat-primary .stat-foot{color:#fff}
+.stat-primary .stat-icon{background:#ffffff26;color:#fff;border:1px solid #ffffff42}
+.stat-primary .stat-dot{background:#baffc9;box-shadow:0 0 0 3px #ffffff18}
+.stat-watermark{color:#ffffff2b}
+.stat-balance{background:linear-gradient(135deg,#fff4cc,#ffedaa);border-color:#edd477}
+.stat-balance .stat-value{color:#6b4a00}.stat-balance .stat-head,.stat-balance .stat-foot{color:#765b18}
+.balance-symbol{border-color:#d6ae42;color:#9a6800}
+.trend-panel,.breakdown-panel,.activity-panel,.donors-panel,.stalls-panel{border-color:#d5e8d9;background:#fff}
+.panel-head h2{color:#123821}.panel-head p{color:#587161}
+.select-pill,.table-search{border-color:#cfe4d4;border-radius:7px}
+.chart-badge{background:#e2f6e7;border-color:#c1e5cb;color:#087a3c}
+.bar{background:linear-gradient(180deg,#35b65c,#087a3c)}
+.bar-column:hover .bar,.bar-column.peak .bar{background:linear-gradient(180deg,#ffc247,#e28a00)}
+.grid-lines i{background:#e4efe6}
+.data-note{background:#fff6d9;border-color:#f0d880;color:#725000;border-radius:6px}
+.spend-square{box-shadow:0 0 0 3px #eff8f1}
+.donor-table-scroll{border-color:#c7e1ce;border-radius:9px;box-shadow:inset 0 1px 4px #12401d08}
+.donor-table thead,.donor-table th{background:#d6f1dc;color:#07572c}
+.donor-table th{font-size:11px;letter-spacing:.08em}
+.donor-table td{font-size:14px;color:#294c35}
+.donor-table tbody tr:nth-child(even){background:#f3fbf5}
+.donor-table tbody tr:hover{background:#dcf5e2}
+.donor-table .donor-name-cell{color:#07572c}
+.donor-table .donor-amount{color:#087a3c}
+.donor-list-scroll:focus-visible,.donor-table-scroll:focus-visible{outline:3px solid #28a957;outline-offset:3px}
+.balance-panel{background:linear-gradient(135deg,#d9f3df 0%,#eff9d7 100%);border-color:#c2e3c9;border-radius:10px}
+.navratri-art{background:linear-gradient(135deg,#ddf4e2,#eaf6d7)}
+.side-nav a.active{background:#d8f2df;color:#07572c}
+.side-nav a:hover{background:#c6edcf;color:#064b27}
+.live-dot{background:#12a34a;box-shadow:0 0 0 3px #d8f2df}
+.footer{border-color:#cfe4d4}
+::selection{background:#9be8ae;color:#073b1c}
+@media(min-width:2000px){.main-content{padding-top:10px;padding-bottom:40px}.page-heading{padding-top:52px;padding-bottom:36px}.stat-card{height:142px}.stat-value{font-size:32px}.panel-head h2{font-size:21px}.donor-table td{padding-top:13px;padding-bottom:13px}}
+@media(max-width:1150px){.main-content{width:calc(100% - 215px);margin-left:215px;max-width:none;padding-left:25px;padding-right:25px}}
+@media(max-width:780px){.main-content{width:100%;margin-left:0;padding-left:18px;padding-right:18px}}
+@media(max-width:480px){.main-content{padding-left:13px;padding-right:13px}}
