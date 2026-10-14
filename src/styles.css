@@ -215,3 +215,22 @@ body{font-size:16px}
 .footer>span:nth-child(2),.footer-right{font-size:10px}
 @media(max-width:760px){.page-heading h1{font-size:46px}.panel-head h2{font-size:19px}.stat-value{font-size:27px}}
 @media(max-width:480px){.side-nav a{font-size:13px}.page-heading h1{font-size:39px}.page-heading p{font-size:14px}.stat-head{font-size:10px}.stat-value{font-size:22px}.stat-foot{font-size:9px}.panel-head h2{font-size:17px}.panel-head p,.donor-table td,.activity-panel td{font-size:11px}.donor-table th,.activity-panel th{font-size:9px}.chart-summary strong{font-size:18px}.spend-legend>div,.spend-legend b{font-size:10px}}
+/* Keep the full brand name inside the sidebar at every width. */
+.sidebar{padding-left:16px;padding-right:12px}
+.sidebar>.brand{gap:10px;max-width:100%;white-space:nowrap}
+.sidebar>.brand .brand-mark{width:62px;height:62px;flex:0 0 62px}
+.sidebar>.brand .brand-name{font-size:16px;letter-spacing:.02em;white-space:nowrap}
+@media(max-width:480px){.sidebar>.brand .brand-mark{width:58px;height:58px;flex-basis:58px}.sidebar>.brand .brand-name{font-size:15px}}
+/* More responsive movement and navigation feedback. */
+.side-nav a{transition:background .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease}
+.side-nav a:hover{transform:translateX(4px)}
+.panel{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.panel:hover{transform:translateY(-2px);box-shadow:0 14px 34px #24583b12;border-color:#b7dfc1}
+.bar-column:hover{z-index:4}.bar-column:hover .bar{filter:saturate(1.3);transform:scaleX(1.16)}
+.heading-aside-icon,.art-star{display:inline-block;animation:festive-float 2.8s ease-in-out infinite}
+.scroll-top{position:fixed;right:24px;bottom:24px;z-index:20;width:48px;height:48px;border:0;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#08a951,#08783e);color:#fff;box-shadow:0 8px 24px #08783e44;cursor:pointer;animation:scroll-pop .22s ease-out}
+.scroll-top:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 30px #08783e55}
+@keyframes festive-float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-5px) rotate(5deg)}}
+@keyframes scroll-pop{from{opacity:0;transform:translateY(8px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:760px){.scroll-top{right:16px;bottom:16px;width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){.heading-aside-icon,.art-star{animation:none}.panel,.side-nav a,.scroll-top{transition:none}}
