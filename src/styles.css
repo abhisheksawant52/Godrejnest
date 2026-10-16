@@ -819,3 +819,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .event-select option{background:#171018;color:#edf5ef}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:760px){.event-select select{max-width:145px;font-size:11px}.topbar-right{min-width:0}.event-select{min-width:0}}
+
+.music-player{position:fixed;left:258px;bottom:18px;z-index:12;display:flex;align-items:center;gap:10px;padding:7px 9px;border:1px solid #80516f;border-radius:999px;background:#21151fef;color:#fff2fa;box-shadow:0 8px 24px #0005;backdrop-filter:blur(10px)}
+.music-toggle{display:flex;align-items:center;gap:7px;border:0;background:transparent;color:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.music-toggle>span:first-child{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#8c3268;color:white;font-size:14px}
+.music-volume{display:flex;align-items:center;gap:7px;color:#e9cddd;font-size:9px}
+.music-volume input{width:75px;height:4px;accent-color:#f28abf;cursor:pointer}
+.music-prompt{max-width:138px;color:#ffd9ec;font-size:9px;line-height:1.2}
+@media(max-width:760px){.music-player{left:12px;bottom:12px;padding:6px 8px}.music-toggle{font-size:10px}.music-toggle>span:first-child{width:28px;height:28px}.music-volume input{width:65px}}

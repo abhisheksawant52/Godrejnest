@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 const events = Object.values(import.meta.glob('./events/*.json', { eager: true, import: 'default' }))
@@ -30,6 +30,37 @@ const buildReceiptsByDay = (statement, year) => [...statement.receipts.filter(en
 function BrandMark() { return <svg className="brand-mark" viewBox="0 0 48 48" role="img" aria-label="Godrej Nest logo"><path d="M10 36.5 24 13l14 23.5M15.3 36.5 24 21l8.7 15.5M8 38.5h32"/><path d="M20.7 29.2c.5-2.9 3.3-5.6 3.3-5.6s2.8 2.7 3.3 5.6a3.3 3.3 0 0 1-6.6 0Z"/><path d="M24 34v2.3"/><circle cx="24" cy="29.6" r="1.2" className="mark-spark"/></svg> }
 function Brand(){return <a className="brand" href="#overview" aria-label="Godrej Nest community ledger"><BrandMark/><span className="brand-name">GODREJ <b>NEST</b></span></a>}
 function Icon({name,size=17}) {const paths={grid:<><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></>,up:<><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></>,down:<><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></>,arrow:<><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></>,chevron:<path d="m7 10 5 5 5-5"/>,calendar:<><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></>,search:<><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></>};return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>}
+function MusicPlayer(){
+ const [playing,setPlaying]=useState(false),[volume,setVolume]=useState(.35),[expanded,setExpanded]=useState(false),[needsGesture,setNeedsGesture]=useState(false);
+ const audioRef=useRef(null),timerRef=useRef(null),noteRef=useRef(0),gainRef=useRef(null),welcomedRef=useRef(false);
+ const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46];
+ const ensureAudio=()=>{if(!audioRef.current){const AudioContextClass=window.AudioContext||window.webkitAudioContext;if(!AudioContextClass)return false;audioRef.current=new AudioContextClass();gainRef.current=audioRef.current.createGain();gainRef.current.gain.value=volume*.12;gainRef.current.connect(audioRef.current.destination)}return true};
+ const playNote=(frequency,when,duration=.9,level=.2)=>{
+  const context=audioRef.current;if(!context||!gainRef.current)return;
+  const oscillator=context.createOscillator(),envelope=context.createGain();
+  oscillator.type='sine';oscillator.frequency.setValueAtTime(frequency,when);
+  envelope.gain.setValueAtTime(.0001,when);envelope.gain.exponentialRampToValueAtTime(level,when+.035);envelope.gain.exponentialRampToValueAtTime(.0001,when+duration);
+  oscillator.connect(envelope);envelope.connect(gainRef.current);oscillator.start(when);oscillator.stop(when+duration+.03);
+ };
+ const tick=()=>{const context=audioRef.current;if(!context)return;const i=noteRef.current++%notes.length;playNote(notes[i],context.currentTime,.85,.22);if(i%4===0)playNote(notes[i]/2,context.currentTime,.95,.11)};
+ const speakWelcome=()=>{if(welcomedRef.current||!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window))return;welcomedRef.current=true;const greeting=new SpeechSynthesisUtterance('Welcome to Godrej Nest');greeting.rate=.92;greeting.pitch=1.02;window.speechSynthesis.speak(greeting)};
+ const start=async()=>{
+  try{
+   if(!ensureAudio()){setNeedsGesture(true);return}
+   await audioRef.current.resume();
+   if(audioRef.current.state!=='running'){setNeedsGesture(true);return}
+   clearInterval(timerRef.current);tick();timerRef.current=setInterval(tick,720);setPlaying(true);setExpanded(true);setNeedsGesture(false);speakWelcome();
+  }catch{setNeedsGesture(true)}
+ };
+ const toggle=async()=>{if(playing){clearInterval(timerRef.current);timerRef.current=null;await audioRef.current?.suspend();setPlaying(false)}else await start(true)};
+ const changeVolume=value=>{const next=Number(value);setVolume(next);if(gainRef.current)gainRef.current.gain.setTargetAtTime(next*.12,audioRef.current.currentTime,.04)};
+ useEffect(()=>{const autoplayTimer=setTimeout(()=>start(),100);return()=>{clearTimeout(autoplayTimer);clearInterval(timerRef.current);audioRef.current?.close();audioRef.current=null;gainRef.current=null;if('speechSynthesis'in window)window.speechSynthesis.cancel()}},[]);
+ return <div className={'music-player'+(expanded?' music-player-expanded':'')}>
+  {needsGesture&&<span className="music-prompt">Tap to hear your welcome</span>}
+  <button className="music-toggle" type="button" onClick={needsGesture?()=>start():toggle} aria-label={playing?'Pause background music':needsGesture?'Enable welcome and music':'Play background music'} title={playing?'Pause music':needsGesture?'Enable welcome and music':'Play soft instrumental music'}><span aria-hidden="true">{playing?'Ⅱ':needsGesture?'▶':'♫'}</span><span>{playing?'Pause':needsGesture?'Enable sound':'Music'}</span></button>
+  {expanded&&<label className="music-volume"><span>Volume</span><input type="range" min="0" max="1" step="0.01" value={volume} onChange={event=>changeVolume(event.target.value)} aria-label="Music volume"/></label>}
+ </div>
+}
 function App(){
  const [eventId,setEventId]=useState(events[0]?.id); const statement=events.find(event=>event.id===eventId)||events[0]; const eventYear=Number(statement.year)||new Date().getFullYear(); const expenses=withExpenseIcons(statement); const receipts=buildReceiptsByDay(statement,eventYear); const availablePeriods=[...new Set(receipts.map(receipt=>`${monthNames[receipt.month-1]} ${eventYear}`))];
  const [period,setPeriod]=useState('All dates'); const [query,setQuery]=useState(''); const [donorQuery,setDonorQuery]=useState(''); const [donorSort,setDonorSort]=useState('statement'); const [mobileOpen,setMobileOpen]=useState(false); const [activeSection,setActiveSection]=useState('overview'); const [showScrollTop,setShowScrollTop]=useState(false);
@@ -62,6 +93,7 @@ function App(){
    <section className="panel activity-panel" id="spending"><div className="panel-head activity-head"><div><div className="panel-kicker">LEDGER DETAIL</div><h2>Recorded event payments</h2><p>{expenses.length} outgoing payments listed in the statement.</p></div><label className="table-search"><Icon name="search" size={15}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search spend" aria-label="Search spending"/>{query&&<button onClick={()=>setQuery('')} aria-label="Clear search">×</button>}</label></div><div className="table-scroll"><table><thead><tr><th>PAYMENT</th><th>DATE</th><th>DETAIL</th><th className="amount-cell">AMOUNT</th></tr></thead><tbody>{filtered.map((x,i)=><tr key={x.item}><td data-label="Payment"><span className={`expense-avatar av-${i}`}>{x.icon}</span><b>{x.item}</b></td><td data-label="Date"><span className="date-text">{x.date}</span></td><td className="detail-text" data-label="Details">{x.note}</td><td className="amount-cell amount-out" data-label="Amount">− {money(x.amount)}</td></tr>)}{filtered.length===0&&<tr><td colSpan="4" className="empty-row">No matching payments.</td></tr>}</tbody></table></div><div className="table-foot"><span>Statement total <b>{money(spendTotal)}</b></span><span>Full payment details from the statement.</span></div></section>
    <section className="bottom-grid"><article className="panel stalls-panel"><div className="panel-head"><div><div className="panel-kicker">MONEY IN</div><h2>Stall fees</h2><p>Community stall receipts recorded separately.</p></div><div className="stall-badge">⌑</div></div><div className="stall-total-row"><strong>{money(stallTotal)}</strong><span>{statement.stalls.length} stalls</span></div><div className="stall-mini-bars">{statement.stalls.map((stall,i)=><div key={i} title={`Stall payment ${i+1}: ${money(Number(stall.amount))}`}><i/><span>{money(Number(stall.amount))}</span></div>)}</div><div className="stall-foot"><span>{statement.stalls.length} stall payments recorded</span><b>+ {money(stallTotal)}</b></div></article><article className="panel balance-panel"><div className="balance-top"><span className="balance-flower">✳</span><span className="panel-kicker">COMMUNITY CONTRIBUTION</span></div><h2>Every little bit<br/>makes <em>a lot.</em></h2><p>Thank you to everyone who helped make {statement.name} special at Godrej Nest.</p><a href="#overview" className="back-link">Back to overview <Icon name="arrow" size={15}/></a><div className="balance-art">✳</div></article></section>
    <footer className="footer"><Brand/><span>{statement.name} · community funds summary</span><span className="footer-right"><span className="live-dot"/> Prepared for Godrej Nest residents · Website created by Abhishek Hemant Sawant</span></footer>
+   <MusicPlayer/>
    {showScrollTop&&<button className="scroll-top" onClick={()=>window.scrollTo({top:0,behavior:'smooth'})} aria-label="Back to top"><Icon name="up" size={20}/></button>}
   </main>
  </div>
