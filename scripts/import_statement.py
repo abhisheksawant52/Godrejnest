@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import the Godrej Nest Navratri workbook into the dashboard JSON ledger."""
+"""Import a Godrej Nest event workbook into its dashboard event JSON file."""
 
 import argparse
 import datetime as dt
@@ -20,7 +20,7 @@ DEFAULT_INPUT = (
     / "Cultural Godrej Nest"
     / "Navratri_Day Contribution Statement 2026.xlsx"
 )
-DEFAULT_OUTPUT = ROOT / "src" / "statement.json"
+EVENTS_DIR = ROOT / "src" / "events"
 MAIN_NS = "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
 REL_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 PKG_REL_NS = "http://schemas.openxmlformats.org/package/2006/relationships"
@@ -241,8 +241,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("workbook", nargs="?", type=Path, default=DEFAULT_INPUT,
                         help=f"source .xlsx file (default: {DEFAULT_INPUT})")
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT,
-                        help=f"dashboard JSON output (default: {DEFAULT_OUTPUT})")
+    parser.add_argument("event_id", nargs="?", help="event identifier (defaults to a slug from the workbook filename)")
+    parser.add_argument("--name", help="event name shown in the event selector")
+    parser.add_argument("--output", type=Path, help="optional explicit JSON output path")
     args = parser.parse_args()
 
     if not args.workbook.is_file():
@@ -250,14 +251,25 @@ def main():
     if args.workbook.suffix.lower() != ".xlsx":
         raise ValueError("Input must be an .xlsx workbook.")
 
+    event_id = args.event_id or re.sub(r"[^a-z0-9]+", "-", args.workbook.stem.lower()).strip("-")
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", event_id):
+        raise ValueError("Event ID must contain lowercase letters, numbers, and single hyphens only.")
+    event_name = args.name or re.sub(r"[_-]+", " ", event_id).title()
+    year_match = re.search(r"(?:19|20)\d{2}", f"{event_name} {event_id}")
+    event_year = int(year_match.group()) if year_match else dt.date.today().year
     data = parse_rows(load_sheets(args.workbook))
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    data = {"id": event_id, "name": event_name, "year": event_year, **data}
+    output = args.output or EVENTS_DIR / f"{event_id}.json"
+    if output.parent.resolve() == EVENTS_DIR.resolve() and output.exists():
+        print(f"Updating existing event data: {output.name}")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
         f"Imported {len(data['receipts'])} receipts, {len(data['stalls'])} stall payments, "
         f"and {len(data['expenses'])} expenses. Totals: contributions ₹{data['totals']['contributions']:,}; "
         f"stall fees ₹{data['totals']['stallFees']:,}; expenses ₹{data['totals']['expenses']:,}."
     )
+    print(f"Event: {event_name} ({event_year}), saved to {output}.")
 
 
 if __name__ == "__main__":

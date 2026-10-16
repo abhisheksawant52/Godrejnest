@@ -813,3 +813,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
  .donor-table td:nth-child(1){color:#ffafd6!important}
 }
 @media(hover:hover){.panel:hover{border-color:#794e6e}}
+
+.event-select{display:flex;align-items:center;gap:6px;color:#728073}
+.event-select select{max-width:190px;appearance:none;border:0;background:transparent;font-size:10px;color:inherit;outline:0;cursor:pointer}
+.event-select option{background:#171018;color:#edf5ef}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:760px){.event-select select{max-width:145px;font-size:11px}.topbar-right{min-width:0}.event-select{min-width:0}}
