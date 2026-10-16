@@ -629,6 +629,28 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 }
 @media(max-width:390px){.donor-table th,.activity-panel th{font-size:10px}}
 
+/* Keep the full desktop canvas within the viewport and make every ledger field
+   reachable on narrow screens through a clearly scrollable table region. */
+@media(min-width:761px){
+ html,body,#root{max-width:100%;overflow-x:clip}
+ .main-content{min-width:0;width:calc(100vw - 240px);margin-left:240px;padding-left:clamp(20px,3vw,52px);padding-right:clamp(20px,3vw,52px)}
+ .content-grid,.bottom-grid,.stats-grid{min-width:0}
+}
+@media(max-width:760px){
+ html,body,#root{max-width:100%;overflow-x:clip}
+ .main-content{min-width:0;width:100%;margin:0;padding-left:14px;padding-right:14px}
+ .donor-table-scroll{max-width:100%;overflow-x:auto!important;overflow-y:auto}
+ .donor-table,.activity-panel table{display:table!important;width:max-content!important;min-width:680px!important;table-layout:auto;border-collapse:collapse}
+ .activity-panel .table-scroll{max-width:100%;overflow-x:auto!important;overflow-y:hidden}
+ .donor-table thead,.activity-panel thead{display:table-header-group!important;position:sticky;top:0;z-index:3}
+ .donor-table tbody,.activity-panel tbody{display:table-row-group!important}
+ .donor-table tr,.activity-panel tr{display:table-row!important;min-width:0!important;border-bottom:1px solid #59364f}
+ .donor-table th,.donor-table td,.activity-panel th,.activity-panel td{display:table-cell!important;white-space:nowrap;overflow:visible;text-overflow:clip;padding:10px 9px}
+ .donor-table td:nth-child(1),.donor-table td:nth-child(3),.donor-table td:nth-child(4),.donor-table td:nth-child(5),.donor-table td:nth-child(6){display:table-cell!important}
+ .activity-panel td:first-child .expense-avatar{display:inline-grid}
+ .activity-panel td:first-child b{display:inline;white-space:normal}
+}
+
 /* Unified dark theme and responsive contrast pass. */
 :root{
  color-scheme:dark;
