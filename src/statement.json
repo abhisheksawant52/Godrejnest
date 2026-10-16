@@ -85,7 +85,7 @@
       "flat": "B-304",
       "amount": "1500",
       "date": "30 Oct 2026",
-      "time": "0:59097222222222223",
+      "time": "2:11 PM",
       "remarks": ""
     },
     {
@@ -181,7 +181,7 @@
       "flat": "B-1503",
       "amount": "1501",
       "date": "4 Oct 2026",
-      "time": "0:85833333333333328",
+      "time": "8:36 PM",
       "remarks": ""
     },
     {
@@ -469,7 +469,7 @@
       "flat": "D-2702",
       "amount": "1000",
       "date": "9 Oct 2026",
-      "time": "11:40 am",
+      "time": "11:40 AM",
       "remarks": ""
     },
     {
@@ -879,32 +879,192 @@
       "date": "15 Oct 2026",
       "time": "12:42 PM",
       "remarks": ""
+    },
+    {
+      "name": "Vijay Kumar Agrawal",
+      "flat": "B-1004",
+      "amount": "1000",
+      "date": "15 Oct 2026",
+      "time": "2:31 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Sanjay Dutta",
+      "flat": "C-3306",
+      "amount": "11000",
+      "date": "15 Oct 2026",
+      "time": "3:14 PM",
+      "remarks": "Cash received from Anand Dube"
+    },
+    {
+      "name": "Chandu udhwani",
+      "flat": "D-503",
+      "amount": "11001",
+      "date": "15 Oct 2026",
+      "time": "4:03 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Jagdish Choudhary",
+      "flat": "",
+      "amount": "1000",
+      "date": "15 Oct 2026",
+      "time": "4:58 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Neelam Patil",
+      "flat": "",
+      "amount": "1000",
+      "date": "15 Oct 2026",
+      "time": "6:38 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Apeksha Singh",
+      "flat": "C-705",
+      "amount": "1000",
+      "date": "15 Oct 2026",
+      "time": "7:52 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Shipra Sharma",
+      "flat": "",
+      "amount": "1100",
+      "date": "15 Oct 2026",
+      "time": "8:17 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Vaishnavi Sharma",
+      "flat": "",
+      "amount": "1001",
+      "date": "15 Oct 2026",
+      "time": "9:19 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Pankaj Yadav",
+      "flat": "A-1603",
+      "amount": "1001",
+      "date": "15 Oct 2026",
+      "time": "9:30 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Mangesh Mohod",
+      "flat": "A-801",
+      "amount": "1001",
+      "date": "15 Oct 2026",
+      "time": "9:37 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Deepak Ashok Singh",
+      "flat": "C-504",
+      "amount": "1000",
+      "date": "15 Oct 2026",
+      "time": "9:39 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Parth Dalmia",
+      "flat": "",
+      "amount": "500",
+      "date": "15 Oct 2026",
+      "time": "9:51 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Madan Madagula",
+      "flat": "",
+      "amount": "501",
+      "date": "15 Oct 2026",
+      "time": "9:54 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Nimish Sharma",
+      "flat": "D-1805",
+      "amount": "1100",
+      "date": "15 Oct 2026",
+      "time": "9:55 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Jyoti Hazra",
+      "flat": "",
+      "amount": "501",
+      "date": "15 Oct 2026",
+      "time": "11:23 PM",
+      "remarks": ""
     }
   ],
   "stalls": [
     {
-      "amount": "1200"
+      "name": "Sangeeta Periwal & Priya Parate",
+      "flat": "B-1701 & C-2004",
+      "amount": "1200",
+      "date": "3 Oct 2026",
+      "time": "12:11 PM",
+      "remarks": "Combined stall - Desserts And Samosa & Misal Pav"
     },
     {
-      "amount": "1200"
+      "name": "Nikita Salunke",
+      "flat": "A-1102",
+      "amount": "1200",
+      "date": "4 Oct 2026",
+      "time": "10:14 PM",
+      "remarks": "Jewellery"
     },
     {
-      "amount": "1200"
+      "name": "Priyanka Desarda & Pooja Thakur",
+      "flat": "B-1101 & C-902",
+      "amount": "1200",
+      "date": "7 Oct 2026",
+      "time": "4:45 PM",
+      "remarks": "Combined stall - Cake Bakery Item and Dahi Vada"
     },
     {
-      "amount": "1200"
+      "name": "Pooja Jadaun",
+      "flat": "C-3706",
+      "amount": "1200",
+      "date": "7 Oct 2026",
+      "time": "11:18 PM",
+      "remarks": "Clothing"
     },
     {
-      "amount": "1200"
+      "name": "Anita Pandey",
+      "flat": "A-2004",
+      "amount": "1200",
+      "date": "8 Oct 2026",
+      "time": "12:49 PM",
+      "remarks": "Home decor"
     },
     {
-      "amount": "1200"
+      "name": "Shipra Sharma",
+      "flat": "B-1204",
+      "amount": "1200",
+      "date": "8 Oct 2026",
+      "time": "3:21 PM",
+      "remarks": "Perfume,candle,hamper"
     },
     {
-      "amount": "1200"
+      "name": "Vandana Bahuguna",
+      "flat": "B-904",
+      "amount": "1200",
+      "date": "14 Oct 2026",
+      "time": "5:37 PM",
+      "remarks": ""
     },
     {
-      "amount": "1200"
+      "name": "Swara Chhabria",
+      "flat": "C-1801",
+      "amount": "1200",
+      "date": "15 Oct 2026",
+      "time": "10:41 AM",
+      "remarks": "Candles"
     }
   ],
   "expenses": [
@@ -956,11 +1116,46 @@
       "amount": "1640",
       "paidTo": "Sujata Sunil Sakpal",
       "remarks": "Anita Pandey Purchased"
+    },
+    {
+      "date": "15 Oct 2026",
+      "item": "flowers",
+      "amount": "480",
+      "paidTo": "Flower Shop",
+      "remarks": "Brought from Kranti Nagar Paid By Google Pay"
+    },
+    {
+      "date": "15 Oct 2026",
+      "item": "Cyrstal Sugar",
+      "amount": "25",
+      "paidTo": "Snehal Supar Market",
+      "remarks": "Paid by google pay"
+    },
+    {
+      "date": "15 Oct 2026",
+      "item": "Yogesh Diwan",
+      "amount": "4070",
+      "paidTo": "Yogesh Diwan",
+      "remarks": "Bills Submited for Rupal dresses and Jaswant sweet and farsan"
+    },
+    {
+      "date": "15 Oct 2026",
+      "item": "Mata Ki Chowki - Final Payment",
+      "amount": "18500",
+      "paidTo": "Paid to Maharaj In Cash",
+      "remarks": "Final Amount Paid"
+    },
+    {
+      "date": "15 Oct 2026",
+      "item": "Catering Final payment",
+      "amount": "25900",
+      "paidTo": "Gupta Catering",
+      "remarks": "Final Amount Paid"
     }
   ],
   "totals": {
-    "contributions": 160970,
+    "contributions": 194676,
     "stallFees": 9600,
-    "expenses": 21104
+    "expenses": 70079
   }
 }
