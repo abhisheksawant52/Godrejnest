@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 const events = Object.values(import.meta.glob('./events/*.json', { eager: true, import: 'default' }))
@@ -32,17 +32,37 @@ function Brand(){return <a className="brand" href="#overview" aria-label="Godrej
 function Icon({name,size=17}) {const paths={grid:<><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></>,up:<><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></>,down:<><path d="M12 5v14"/><path d="m18 13-6 6-6-6"/></>,arrow:<><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></>,chevron:<path d="m7 10 5 5 5-5"/>,calendar:<><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></>,search:<><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></>};return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>}
 function WelcomeVoice(){
  const [status,setStatus]=useState('starting');
+ const voicesRef=useRef([]),toneContextRef=useRef(null);
+ const startChime=async()=>{
+  try{
+   const AudioContextClass=window.AudioContext||window.webkitAudioContext;if(!AudioContextClass)return;
+   if(!toneContextRef.current)toneContextRef.current=new AudioContextClass();
+   const context=toneContextRef.current;await context.resume();if(context.state!=='running')return;
+   [523.25,659.25,783.99,1046.5].forEach((frequency,index)=>{
+    const start=context.currentTime+index*.34,oscillator=context.createOscillator(),envelope=context.createGain();
+    oscillator.type='sine';oscillator.frequency.setValueAtTime(frequency,start);
+    envelope.gain.setValueAtTime(.0001,start);envelope.gain.exponentialRampToValueAtTime(.035,start+.04);envelope.gain.exponentialRampToValueAtTime(.0001,start+.62);
+    oscillator.connect(envelope);envelope.connect(context.destination);oscillator.start(start);oscillator.stop(start+.65);
+   });
+  }catch{}
+ };
  const speak=()=>{
   if(!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window)){setStatus('unavailable');return}
   window.speechSynthesis.cancel();
+  startChime();
+  const voices=window.speechSynthesis.getVoices();if(voices.length)voicesRef.current=voices;
+  const femaleHints=/female|zira|aria|jenny|samantha|victoria|karen|susan|hazel|sonia|priya|heera|veena|raveena|lekha|sangeeta|moira|tessa|fiona/i;
+  const english=voicesRef.current.filter(voice=>voice.lang.toLowerCase().startsWith('en'));
+  const voice=english.find(item=>item.gender?.toLowerCase()==='female'||femaleHints.test(item.name))||voicesRef.current.find(item=>item.gender?.toLowerCase()==='female'||femaleHints.test(item.name))||english.find(item=>item.lang.toLowerCase()==='en-in')||english[0];
+  const femaleVoiceFound=Boolean(voice&&(voice.gender?.toLowerCase()==='female'||femaleHints.test(voice.name)));
   const greeting=new SpeechSynthesisUtterance('Welcome to Godrej Nest Community');
-  greeting.lang='en-IN';greeting.rate=.94;greeting.pitch=1.02;
-  greeting.onstart=()=>setStatus('spoken');
+  greeting.lang=voice?.lang||'en-IN';greeting.rate=.94;greeting.pitch=1.12;if(voice)greeting.voice=voice;
+  greeting.onstart=()=>setStatus(femaleVoiceFound?'spoken':'default-voice');
   greeting.onerror=()=>setStatus('blocked');
   window.speechSynthesis.speak(greeting);
  };
- useEffect(()=>{const attempt=setTimeout(speak,150);const fallback=setTimeout(()=>setStatus(current=>current==='spoken'?'spoken':'blocked'),1800);return()=>{clearTimeout(attempt);clearTimeout(fallback);if('speechSynthesis'in window)window.speechSynthesis.cancel()}},[]);
- return <div className="welcome-voice"><span aria-live="polite">{status==='spoken'?'Welcome to Godrej Nest Community':status==='unavailable'?'Voice welcome unavailable':'Hear our welcome'}</span><button type="button" onClick={speak} disabled={status==='unavailable'} aria-label="Play welcome voice">{status==='blocked'?'Tap to hear':'Replay welcome'}</button></div>
+ useEffect(()=>{const refreshVoices=()=>{voicesRef.current=window.speechSynthesis.getVoices()};refreshVoices();window.speechSynthesis?.addEventListener?.('voiceschanged',refreshVoices);const attempt=setTimeout(speak,150);const fallback=setTimeout(()=>setStatus(current=>current==='spoken'?'spoken':'blocked'),1800);return()=>{clearTimeout(attempt);clearTimeout(fallback);window.speechSynthesis?.removeEventListener?.('voiceschanged',refreshVoices);if('speechSynthesis'in window)window.speechSynthesis.cancel();toneContextRef.current?.close()}},[]);
+ return <div className="welcome-voice"><span aria-live="polite">{status==='spoken'?'Welcome to Godrej Nest Community':status==='default-voice'?'Female voice unavailable; using device voice':status==='unavailable'?'Voice welcome unavailable':'Hear our welcome'}</span><button type="button" onClick={speak} disabled={status==='unavailable'} aria-label="Play welcome voice">{status==='blocked'?'Tap to hear':'Replay welcome'}</button></div>
 }
 function App(){
  const [eventId,setEventId]=useState(events[0]?.id); const statement=events.find(event=>event.id===eventId)||events[0]; const eventYear=Number(statement.year)||new Date().getFullYear(); const expenses=withExpenseIcons(statement); const receipts=buildReceiptsByDay(statement,eventYear); const availablePeriods=[...new Set(receipts.map(receipt=>`${monthNames[receipt.month-1]} ${eventYear}`))];
