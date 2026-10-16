@@ -513,6 +513,96 @@ body{background:radial-gradient(ellipse at 15% 0%,#18382b 0%,#101c17 42%,#0b1311
  .donor-table tbody tr:last-child{border-bottom:0}
 }
 @media(max-width:390px){.donor-table th,.donor-table td{padding-left:4px;padding-right:4px}}
+
+/* Accessible festival palette: warm page colors with strong text contrast. */
+:root{--green:#28644e;--green-dark:#1f503e;--ink:#24392d;--muted:#586b5e;--line:#dce5dd;color:var(--ink);background:#f7f8f4}
+body{background:linear-gradient(135deg,#f4faf5 0%,#f7f7f1 52%,#fff5ed 100%);color:var(--ink)}
+.main-content{color:#24392d}
+.sidebar{background:linear-gradient(180deg,#fff 0%,#f3faf4 100%);border-color:#d9e5dc}
+.sidebar-label,.sidebar-foot,.art-caption{color:#596c5d}
+.report-year{color:#596c5d}
+.side-nav a{color:#53675a}
+.side-nav a:hover,.side-nav a.active{background:#e1f2e5;color:#185f38}
+.navratri-art{background:linear-gradient(135deg,#e5f5e8,#fff0d9)}
+.navratri-art>b{color:#294b35}.navratri-art b i{color:#8a591d}
+.topbar{border-color:#dce5dd}
+.breadcrumb,.year-select{color:#586b5e}
+.breadcrumb b{color:#263d2e}
+.privacy-chip{background:#e1f3e5;border-color:#c6e5ce;color:#185f38}
+.page-heading h1{color:#183d29}
+.page-heading h1 em{color:#137947}
+.page-heading p,.heading-aside{color:#53675a}
+.heading-aside b{color:#294b35}
+.kicker,.panel-kicker{color:#286544}
+.kicker-mark,.heading-aside-icon,.balance-flower,.art-star{color:#ad6800}
+.stat-card,.panel{color:#24392d;border-color:#dce5dd;box-shadow:0 5px 18px #244a3210}
+.stat-primary{background:linear-gradient(135deg,#dff5e2,#c6ecd0);border-color:#78bd88}
+.stat-primary .stat-head,.stat-primary .stat-value,.stat-primary .stat-foot{color:#173c27}
+.stat-primary .stat-icon{background:#a9ddb4;color:#174d2d}
+.stat-card:nth-child(2){background:linear-gradient(135deg,#fff,#fff0e9);border-color:#e9a185}
+.stat-card:nth-child(2) .stat-value{color:#873d26}
+.stat-card:nth-child(3){background:linear-gradient(135deg,#fffef6,#fff2c7);border-color:#e7c55f}
+.stat-card:nth-child(3) .stat-value{color:#705000}
+.stat-card:nth-child(4){background:linear-gradient(135deg,#f0fbf9,#d9f2ed);border-color:#79bfb4}
+.stat-card:nth-child(4) .stat-value{color:#15564c}
+.stat-head,.stat-foot{color:#43594a}
+.stat-value{color:#213d2c}
+.stat-watermark{color:#6b9a7330}
+.trend-panel{background:linear-gradient(145deg,#fff,#f5fbf6)}
+.breakdown-panel{background:linear-gradient(145deg,#fff,#fff8ed)}
+.donors-panel{background:linear-gradient(145deg,#fff,#f4f8ff)}
+.activity-panel{background:linear-gradient(145deg,#fff,#fff6f1)}
+.stalls-panel{background:linear-gradient(145deg,#fff,#fff8e6)}
+.balance-panel{background:linear-gradient(135deg,#e4f5e7,#edf7dc);border-color:#c7dfc8}
+.balance-panel h2{color:#233c2b}.balance-panel h2 em{color:#9a5e19}
+.balance-panel>p{color:#43594a}
+.panel-head h2,.chart-summary strong{color:#213d2c}
+.panel-head p,.chart-label,.chart-summary strong small,.chart-legend,.y-axis,.x-label,.bar-value{color:#53675a}
+.select-pill,.table-search,.sort-select{background:#fff;border-color:#cbd9ce;color:#43594a}
+.select-pill select,.sort-select select{color:#294b35}
+.table-search input{color:#24392d}
+.table-search input::placeholder{color:#596c5d;opacity:1}
+.chart-badge{background:#e2f3e6;border-color:#c4e1cc;color:#185f38}
+.grid-lines i{background:#dfe8e0}
+.bar{background:linear-gradient(180deg,#58a971,#267449)}
+.bar-column:nth-child(3n) .bar{background:linear-gradient(180deg,#67aaa2,#327b73)}
+.bar-column:nth-child(4n) .bar{background:linear-gradient(180deg,#e3ae4d,#a96b13)}
+.bar-column:hover .bar,.bar-column.peak .bar{background:linear-gradient(180deg,#f2bb4d,#b96b12)}
+.donut-inner{background:#fffaf0}.donut-inner span{color:#53675a}.donut-inner b{color:#24392d}
+.spend-legend>div{color:#43594a}.spend-legend b{color:#24392d}
+.panel-link,.back-link{color:#185f38}
+.panel-link:hover,.back-link:hover{color:#0c4728}
+.data-note{background:#fff2cb;border-color:#dfb94f;color:#614600}
+.donor-table-scroll,.table-scroll{background:#173222;border-color:#315b3d}
+.donor-table th,.activity-panel th{background:#216b3d;color:#fff;border-color:#438253}
+.donor-table td,.activity-panel td{background:#173222;color:#f0f7f1;border-color:#31513a}
+.donor-table tbody tr:nth-child(even) td{background:#203d2a}
+.donor-table tbody tr:hover td,.activity-panel tbody tr:hover td{background:#2a5035;color:#fff}
+.donor-name-cell,.donor-amount{color:#b9f2c3!important}
+.amount-out{color:#ffad83!important}
+.donor-foot,.table-foot{color:#43594a;border-color:#dce5dd}
+.date-text,.detail-text{color:#43594a}
+.expense-avatar{color:#fff}
+.stall-total-row strong{color:#74500a}
+.stall-total-row span,.stall-foot{color:#53675a}
+.stall-foot b{color:#185f38}
+.stall-badge{background:#fff0c8;color:#795500}
+.stall-mini-bars span{color:#43594a}
+.footer{border-color:#dce5dd}
+.footer>span:nth-child(2),.footer-right{color:#53675a}
+.footer .brand-name{color:#28644a}.footer .brand-name b{color:#9a5e19}
+.live-dot{background:#278749;box-shadow:0 0 0 3px #e0f1e4}
+.scroll-top{background:linear-gradient(135deg,#286f49,#245b80)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline-color:#236b9c}
+::selection{background:#c5ead0;color:#173c27}
+@media(max-width:760px){
+ .donors-panel,.activity-panel{background:transparent}
+ .donor-table-scroll{background:#173222;border-color:#315b3d}
+ .donor-table td,.activity-panel td{color:#f0f7f1}
+ .donor-table th,.activity-panel th{background:#216b3d!important;color:#fff!important;border-bottom-color:#74c987!important}
+ .donor-table td:nth-child(1){color:#b9f2c3!important}
+ .donor-foot,.table-foot,.panel-head p{color:#43594a}
+}
 /* Make the contribution list scrollbar visible against the dark register. */
 .donor-table-scroll{scrollbar-width:thin;scrollbar-color:#55d77d #203329;overscroll-behavior:contain}
 .donor-table-scroll::-webkit-scrollbar{width:12px;height:12px}
