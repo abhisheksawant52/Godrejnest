@@ -44,7 +44,7 @@ function App(){
  const outOfYearReceipts=statement.receipts.filter(record=>{const date=parseStatementDate(record.date);return date&&date.getUTCFullYear()!==2026;});
  const outOfYearTotal=outOfYearReceipts.reduce((sum,record)=>sum+Number(record.amount||0),0);
  const trendNote=[outOfYearReceipts.length&&`${outOfYearReceipts.length} receipt${outOfYearReceipts.length===1?' is':'s are'} dated outside 2026 (${money(outOfYearTotal)} total); included in the overall contribution total but excluded from this 2026 trend.`].filter(Boolean).join(' ');
- const spendColors=['#63876a','#d2ad61','#a4b29c','#e4d7ad','#49a8a2','#e98751'];
+ const spendColors=['#f472b6','#e9b85c','#b09bd8','#e7a184','#63c7bd','#fb8b72'];
  let spendAngle=0;
  const spendGradient=`conic-gradient(${expenses.map((entry,index)=>{const start=spendAngle;spendAngle+=Number(entry.amount)/spendTotal*360;return `${spendColors[index%spendColors.length]} ${start}deg ${spendAngle}deg`;}).join(',')})`;
  const dateRange=visibleReceipts.length?`${visibleReceipts[0].day}, 2026 - ${visibleReceipts[visibleReceipts.length-1].day}, 2026`:'No dated entries';
