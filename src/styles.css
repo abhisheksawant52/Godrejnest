@@ -824,3 +824,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .welcome-voice button{border:0;border-radius:999px;padding:7px 11px;background:#8c3268;color:white;font-size:10px;font-weight:700;cursor:pointer}
 .welcome-voice button:disabled{opacity:.6;cursor:default}
 @media(max-width:760px){.welcome-voice{left:12px;bottom:12px}}
+
+.sidebar>.brand .brand-name{font-size:18px;letter-spacing:.035em}
+.footer .brand-name{font-size:16px}
