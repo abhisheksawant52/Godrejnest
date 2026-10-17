@@ -830,6 +830,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 
 /* Cultural team welcome banner */
 .welcome-banner{position:relative;display:flex;align-items:center;gap:22px;min-height:146px;margin:25px 0 0;padding:18px 30px;overflow:hidden;border:1px solid #80516f;border-radius:18px;background:radial-gradient(ellipse at 88% 5%,#853861 0%,transparent 39%),linear-gradient(112deg,#39203a,#542743 58%,#33233d);box-shadow:0 12px 30px #05020830}
+.welcome-banner:before{content:"";position:absolute;right:7%;top:50%;width:132px;height:132px;border-radius:50%;background:repeating-conic-gradient(from 0deg,#ffd166 0deg 2deg,transparent 2deg 15deg);mask:radial-gradient(circle,transparent 0 17%,#000 18% 20%,transparent 21% 31%,#000 32% 38%,transparent 39% 48%,#000 49% 52%,transparent 53%);opacity:.24;transform:translateY(-50%);animation:rangoli-turn 48s linear infinite}
 .welcome-mascot{width:112px;height:108px;flex:0 0 112px;display:grid;place-items:center;filter:drop-shadow(0 5px 3px #10070c55);animation:welcome-bob 3.4s ease-in-out infinite}
 .welcome-mascot-wrap{position:relative;flex:0 0 112px;width:112px;height:108px}
 .welcome-mascot-wrap .welcome-mascot{width:100%;height:100%}
@@ -841,10 +842,19 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .welcome-banner-kicker{display:block;margin-bottom:8px;color:#f4b6d4;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .welcome-banner h2{margin:0;color:#fff5fa;font:500 clamp(20px,2.5vw,32px)/1.25 Manrope,sans-serif;letter-spacing:-.035em}
 .welcome-banner h2 strong{color:#ffa7d0;font-weight:700}
+.welcome-festive-note{display:block;margin-top:7px;color:#ffd982;font-size:10px;font-weight:700;letter-spacing:.09em}
+.welcome-banner-copy:after{content:"";display:block;width:52px;height:2px;margin-top:9px;border-radius:2px;background:linear-gradient(90deg,#ffd166,#ec75b2,transparent)}
+.mascot-skirt{transform-box:view-box;transform-origin:60px 82px;animation:garba-sway 2.1s ease-in-out infinite}
+.dandiya-stick{transform-box:view-box;transform-origin:102px 61px;animation:dandiya-dance 1.25s ease-in-out infinite alternate}
 .welcome-banner-spark{position:absolute;right:30px;top:17px;color:#ffd166;font-size:35px;opacity:.8;animation:festive-float 3s ease-in-out infinite}
 @keyframes welcome-bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
 @keyframes mascot-wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-23deg)}50%{transform:rotate(8deg)}75%{transform:rotate(-18deg)}}
 @keyframes speech-pop{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.04)}}
-@media(max-width:760px){.welcome-banner{min-height:116px;gap:12px;margin-top:16px;padding:12px 15px;border-radius:14px}.welcome-mascot-wrap{width:84px;height:84px;flex-basis:84px}.welcome-mascot{width:84px;height:84px;flex-basis:84px}.mascot-speech{top:-5px;left:-9px;padding:5px 8px;font-size:10px}.welcome-banner-kicker{font-size:8px;margin-bottom:5px}.welcome-banner h2{font-size:clamp(17px,4.6vw,23px)}.welcome-banner-spark{right:13px;top:8px;font-size:25px}.welcome-break{display:none}}
+@keyframes garba-sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(3deg)}}
+@keyframes dandiya-dance{from{transform:rotate(-8deg)}to{transform:rotate(11deg)}}
+@keyframes rangoli-turn{to{transform:translateY(-50%) rotate(360deg)}}
+.stat-card{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+@media(hover:hover){.stat-card:hover{transform:translateY(-3px);border-color:#d47ca8;box-shadow:0 14px 30px #0005}}
+@media(max-width:760px){.welcome-banner{min-height:116px;gap:12px;margin-top:16px;padding:12px 15px;border-radius:14px}.welcome-banner:before{right:-25px;width:90px;height:90px;opacity:.2}.welcome-mascot-wrap{width:84px;height:84px;flex-basis:84px}.welcome-mascot{width:84px;height:84px;flex-basis:84px}.mascot-speech{top:-5px;left:-9px;padding:5px 8px;font-size:10px}.welcome-banner-kicker{font-size:8px;margin-bottom:5px}.welcome-banner h2{font-size:clamp(17px,4.6vw,23px)}.welcome-festive-note{font-size:8px;margin-top:5px}.welcome-banner-spark{right:13px;top:8px;font-size:25px}.welcome-break{display:none}}
 @media(max-width:390px){.welcome-banner{gap:8px;padding:10px}.welcome-mascot-wrap{width:66px;height:72px;flex-basis:66px}.welcome-mascot{width:66px;height:72px;flex-basis:66px}.mascot-speech{left:-6px;font-size:9px}.welcome-banner h2{font-size:16px}.welcome-banner-kicker{font-size:7px;letter-spacing:.1em}}
-@media(prefers-reduced-motion:reduce){.welcome-mascot,.welcome-banner-spark,.mascot-wave,.mascot-speech{animation:none}}
+@media(prefers-reduced-motion:reduce){.welcome-mascot,.welcome-banner-spark,.mascot-wave,.mascot-speech,.mascot-skirt,.dandiya-stick,.welcome-banner:before{animation:none}.stat-card{transition:none}}
