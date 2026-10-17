@@ -1026,6 +1026,14 @@
       "date": "16 Oct 2026",
       "time": "9:31 PM",
       "remarks": ""
+    },
+    {
+      "name": "Vishal Chandrani",
+      "flat": "B-2004",
+      "amount": "1001",
+      "date": "17 Oct 2026",
+      "time": "1:47 PM",
+      "remarks": ""
     }
   ],
   "stalls": [
@@ -1092,6 +1100,14 @@
       "date": "15 Oct 2026",
       "time": "10:41 AM",
       "remarks": "Candles"
+    },
+    {
+      "name": "Vaishnavi Dubey",
+      "flat": "A-1704",
+      "amount": "1200",
+      "date": "17 Oct 2026",
+      "time": "3:32 PM",
+      "remarks": "Imitation Jewellery"
     }
   ],
   "expenses": [
@@ -1181,8 +1197,8 @@
     }
   ],
   "totals": {
-    "contributions": 227177,
-    "stallFees": 9600,
+    "contributions": 228178,
+    "stallFees": 10800,
     "expenses": 70079
   }
 }
