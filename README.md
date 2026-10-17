@@ -40,10 +40,10 @@ This creates `src/events/diwali-2026.json`. The event selector discovers JSON fi
 
 The event ID is a lowercase slug made of letters, numbers, and hyphens. Reusing an ID updates that event's JSON file. If omitted, the importer generates an ID from the workbook filename. The display name is optional and defaults to a title-cased version of the ID. The chart year is read from the display name or ID; if neither includes a year, the current year is used.
 
-For example, to import or refresh the existing Navratri event:
+For example, to import or refresh the existing Navratri event, reuse its `navratri-2026` ID. Reusing the ID updates the existing event instead of creating a second event from the workbook filename:
 
 ```powershell
-npm run import:statement -- "C:\path\to\Navratri_Day Contribution Statement 2026.xlsx" navratri-2026 --name "Navratri 2026"
+npm run import:statement -- "C:\Users\Abhishek\OneDrive\Desktop\Cultural Godrej Nest\Navratri_Day Contribution Statement 2026.xlsx" navratri-2026 --name "Navratri 2026"
 ```
 
 The importer checks for the required tabs and headers, validates dates and positive amounts, calculates totals, and stops if the expense rows do not match the workbook's stated expense total. It keeps the anonymous donor label and omits that receipt's free-text remark. Review the generated JSON before building and deploying.
