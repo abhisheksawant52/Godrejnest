@@ -905,7 +905,7 @@
       "amount": "11001",
       "date": "15 Oct 2026",
       "time": "4:03 PM",
-      "remarks": ""
+      "remarks": "Cash received from Nikita"
     },
     {
       "name": "Jagdish Choudhary",
@@ -1001,6 +1001,30 @@
       "amount": "501",
       "date": "15 Oct 2026",
       "time": "11:23 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Abhay Chhajed",
+      "flat": "B-304",
+      "amount": "31000",
+      "date": "16 Oct 2026",
+      "time": "9:12 PM",
+      "remarks": "नवरात्री में गोदरेज नेस्ट के निवासी साथी भक्तों के लिए भोजन -प्रसादी के लिए छोटी से भेंट,कृपा पूर्वक स्वीकार करें.\nअभय छाजेड़ \nबी -304 गोदरेज नेस्ट"
+    },
+    {
+      "name": "Meena Singh",
+      "flat": "C-705",
+      "amount": "500",
+      "date": "16 Oct 2026",
+      "time": "9:20 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Akhil Karkera",
+      "flat": "D-3603",
+      "amount": "1001",
+      "date": "16 Oct 2026",
+      "time": "9:31 PM",
       "remarks": ""
     }
   ],
@@ -1101,7 +1125,7 @@
     },
     {
       "date": "14 Oct 2026",
-      "item": "Catering Advance",
+      "item": "Catering Advance For Mata ki Chowki dinner",
       "amount": "5000",
       "paidTo": "Gupta Catering",
       "remarks": "Gupta Catering Advance Token 5000"
@@ -1150,14 +1174,14 @@
     },
     {
       "date": "15 Oct 2026",
-      "item": "Catering Final payment",
+      "item": "Catering Final payment For Mata ki Chowki dinner",
       "amount": "25900",
       "paidTo": "Gupta Catering",
       "remarks": "Final Amount Paid"
     }
   ],
   "totals": {
-    "contributions": 194676,
+    "contributions": 227177,
     "stallFees": 9600,
     "expenses": 70079
   }
