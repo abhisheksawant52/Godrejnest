@@ -677,7 +677,7 @@
     },
     {
       "name": "Gautam Kumar",
-      "flat": "D-901",
+      "flat": "A-1302",
       "amount": "501",
       "date": "13 Oct 2026",
       "time": "2:13 PM",
@@ -757,7 +757,7 @@
     },
     {
       "name": "Pooja Vipin Singh",
-      "flat": "",
+      "flat": "A-1601",
       "amount": "1001",
       "date": "14 Oct 2026",
       "time": "2:14 PM",
@@ -1042,6 +1042,14 @@
       "date": "17 Oct 2026",
       "time": "5:39 PM",
       "remarks": ""
+    },
+    {
+      "name": "Yashgopal Vaishnav",
+      "flat": "A-404",
+      "amount": "1500",
+      "date": "18 Oct 2026",
+      "time": "2:25 PM",
+      "remarks": ""
     }
   ],
   "stalls": [
@@ -1233,7 +1241,7 @@
     }
   ],
   "totals": {
-    "contributions": 228679,
+    "contributions": 230179,
     "stallFees": 10800,
     "expenses": 72648
   }
