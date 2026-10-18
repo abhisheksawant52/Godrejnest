@@ -1034,6 +1034,14 @@
       "date": "17 Oct 2026",
       "time": "1:47 PM",
       "remarks": ""
+    },
+    {
+      "name": "Ruchi Sharma",
+      "flat": "A-103",
+      "amount": "501",
+      "date": "17 Oct 2026",
+      "time": "5:39 PM",
+      "remarks": ""
     }
   ],
   "stalls": [
@@ -1176,7 +1184,7 @@
     },
     {
       "date": "15 Oct 2026",
-      "item": "Mata Ki Chowki Duppata and Sweets- Yogesh Diwan",
+      "item": "Yogesh Diwan",
       "amount": "4070",
       "paidTo": "Yogesh Diwan",
       "remarks": "Bills Submited for Rupal dresses and Jaswant sweet and farsan"
@@ -1194,11 +1202,39 @@
       "amount": "25900",
       "paidTo": "Gupta Catering",
       "remarks": "Final Amount Paid"
+    },
+    {
+      "date": "17 Oct 2026",
+      "item": "Ghee for Pooja",
+      "amount": "400",
+      "paidTo": "Bhavani Store",
+      "remarks": "Google pay"
+    },
+    {
+      "date": "17 Oct 2026",
+      "item": "Sweets - Ramdev Mithaiwala - 1250 Grams",
+      "amount": "1150",
+      "paidTo": "Ramdev Mithaiwala",
+      "remarks": "Google Pay - Bill Attached"
+    },
+    {
+      "date": "17 Oct 2026",
+      "item": "Garland and Flowers for Pooja",
+      "amount": "230",
+      "paidTo": "Paid to Flowers Shop",
+      "remarks": "Google Pay"
+    },
+    {
+      "date": "17 Oct 2026",
+      "item": "Water Bottle - 144 bottles",
+      "amount": "789",
+      "paidTo": "Swiggy Instamart",
+      "remarks": "Google pay"
     }
   ],
   "totals": {
-    "contributions": 228178,
+    "contributions": 228679,
     "stallFees": 10800,
-    "expenses": 70079
+    "expenses": 72648
   }
 }
