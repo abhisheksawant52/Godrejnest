@@ -1050,6 +1050,22 @@
       "date": "18 Oct 2026",
       "time": "2:25 PM",
       "remarks": ""
+    },
+    {
+      "name": "Rutika Bhatt",
+      "flat": "D-1501",
+      "amount": "1000",
+      "date": "18 Oct 2026",
+      "time": "10:51 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Deepak Singh",
+      "flat": "C-504",
+      "amount": "7000",
+      "date": "18 Oct 2026",
+      "time": "11:27 PM",
+      "remarks": ""
     }
   ],
   "stalls": [
@@ -1237,12 +1253,33 @@
       "item": "Water Bottle - 144 bottles",
       "amount": "789",
       "paidTo": "Swiggy Instamart",
+      "remarks": "Google Pay"
+    },
+    {
+      "date": "18 Oct 2026",
+      "item": "Sweets - Brijwasi Sweets",
+      "amount": "585",
+      "paidTo": "Swiggy Instamart",
+      "remarks": "Google Pay"
+    },
+    {
+      "date": "18 Oct 2026",
+      "item": "Water Bottle - 48",
+      "amount": "271",
+      "paidTo": "Swiggy Instamart",
       "remarks": "Google pay"
+    },
+    {
+      "date": "18 Oct 2026",
+      "item": "Water Bottle - 240",
+      "amount": "1320",
+      "paidTo": "Mahalaxmi Dairy and Bakery",
+      "remarks": "Google Pay"
     }
   ],
   "totals": {
-    "contributions": 230179,
+    "contributions": 238179,
     "stallFees": 10800,
-    "expenses": 72648
+    "expenses": 74824
   }
 }
