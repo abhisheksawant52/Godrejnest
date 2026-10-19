@@ -1257,7 +1257,7 @@
     },
     {
       "date": "18 Oct 2026",
-      "item": "Sweets - Brijwasi Sweets",
+      "item": "Sweets - Brijwasi Sweets - 500 Grams",
       "amount": "585",
       "paidTo": "Swiggy Instamart",
       "remarks": "Google Pay"
@@ -1275,11 +1275,25 @@
       "amount": "1320",
       "paidTo": "Mahalaxmi Dairy and Bakery",
       "remarks": "Google Pay"
+    },
+    {
+      "date": "19 Oct 2026",
+      "item": "Gifts - Winners",
+      "amount": "2912",
+      "paidTo": "Swarg Collections",
+      "remarks": "Payment Made to Swarg collections - Bill Submitted"
+    },
+    {
+      "date": "19 Oct 2026",
+      "item": "Sweets - Brijwasi Sweets - 500 Grams",
+      "amount": "585",
+      "paidTo": "Paid to Brijwasi Sweets On Swiggy",
+      "remarks": "Google Pay Payment Done"
     }
   ],
   "totals": {
     "contributions": 238179,
     "stallFees": 10800,
-    "expenses": 74824
+    "expenses": 78321
   }
 }
