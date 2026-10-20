@@ -1066,6 +1066,78 @@
       "date": "18 Oct 2026",
       "time": "11:27 PM",
       "remarks": ""
+    },
+    {
+      "name": "Yukti Mishra",
+      "flat": "D-802",
+      "amount": "500",
+      "date": "19 Oct 2026",
+      "time": "6:35 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Mili Gupta",
+      "flat": "D-1704",
+      "amount": "500",
+      "date": "19 Oct 2026",
+      "time": "6:43 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Sanjay Sharma - Live coupons",
+      "flat": "",
+      "amount": "200",
+      "date": "19 Oct 2026",
+      "time": "9:21 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Ajay Nishad",
+      "flat": "C-1903",
+      "amount": "200",
+      "date": "19 Oct 2026",
+      "time": "9:30 PM",
+      "remarks": "Paid By Cash"
+    },
+    {
+      "name": "Chandrakanth",
+      "flat": "D-704",
+      "amount": "200",
+      "date": "19 Oct 2026",
+      "time": "9:30 PM",
+      "remarks": "Paid to Cash"
+    },
+    {
+      "name": "Bhavisha Patel",
+      "flat": "D-2804",
+      "amount": "500",
+      "date": "19 Oct 2026",
+      "time": "9:37 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Aniket Vishe",
+      "flat": "D-3106",
+      "amount": "500",
+      "date": "19 Oct 2026",
+      "time": "9:56 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Ratan Chatterjee",
+      "flat": "D-3205",
+      "amount": "200",
+      "date": "19 Oct 2026",
+      "time": "10:03 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Live Coupons - Dinner",
+      "flat": "",
+      "amount": "1000",
+      "date": "19 Oct 2026",
+      "time": "11:44 PM",
+      "remarks": "Paid By Hitendra Patel"
     }
   ],
   "stalls": [
@@ -1289,11 +1361,25 @@
       "amount": "585",
       "paidTo": "Paid to Brijwasi Sweets On Swiggy",
       "remarks": "Google Pay Payment Done"
+    },
+    {
+      "date": "19 Oct 2026",
+      "item": "Fruits and Maata ka Haar",
+      "amount": "400",
+      "paidTo": "Paid to Radhika Sawant",
+      "remarks": "She paid to Flowers and Fruits Shop"
+    },
+    {
+      "date": "19 Oct 2026",
+      "item": "First Winner in Navratri Garba",
+      "amount": "1001",
+      "paidTo": "Winner Name - Thruin Patel",
+      "remarks": "Paid in Cash to Winner"
     }
   ],
   "totals": {
-    "contributions": 238179,
+    "contributions": 241979,
     "stallFees": 10800,
-    "expenses": 78321
+    "expenses": 79722
   }
 }
