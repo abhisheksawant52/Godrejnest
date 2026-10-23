@@ -1248,7 +1248,7 @@
       "item": "Catering Advance For Mata ki Chowki dinner",
       "amount": "5000",
       "paidTo": "Gupta Catering",
-      "remarks": "Gupta Catering Advance Token 5000 paid in cash"
+      "remarks": "Gupta Catering Advance Token 5000"
     },
     {
       "date": "15 Oct 2026",
@@ -1290,14 +1290,14 @@
       "item": "Mata Ki Chowki - Final Payment",
       "amount": "18500",
       "paidTo": "Paid to Maharaj In Cash",
-      "remarks": "Final Amount Paid in cash"
+      "remarks": "Final Amount Paid"
     },
     {
       "date": "15 Oct 2026",
       "item": "Catering Final payment For Mata ki Chowki dinner",
       "amount": "25900",
       "paidTo": "Gupta Catering",
-      "remarks": "Final Amount Paid in cash"
+      "remarks": "Final Amount Paid"
     },
     {
       "date": "17 Oct 2026",
@@ -1382,11 +1382,18 @@
       "amount": "69000",
       "paidTo": "Surendra Sah & Narendra Sah",
       "remarks": "30000 + 39000 Payment done on 2 QR Code"
+    },
+    {
+      "date": "21 Oct 2026",
+      "item": "Payment to Chirantan More - Good luck to Carterer",
+      "amount": "1700",
+      "paidTo": "Chirantan More Has paid to Carterer",
+      "remarks": "Good Luck payment to Carterer Staff"
     }
   ],
   "totals": {
     "contributions": 241979,
     "stallFees": 10800,
-    "expenses": 148722
+    "expenses": 150422
   }
 }
