@@ -1138,6 +1138,22 @@
       "date": "19 Oct 2026",
       "time": "11:44 PM",
       "remarks": "Paid By Hitendra Patel"
+    },
+    {
+      "name": "Rajesh Gandhi",
+      "flat": "",
+      "amount": "1000",
+      "date": "24 Oct 2026",
+      "time": "5:13 PM",
+      "remarks": ""
+    },
+    {
+      "name": "Bhagvati Medical Devaram Uncle",
+      "flat": "A-1401",
+      "amount": "2000",
+      "date": "24 Oct 2026",
+      "time": "8:21 PM",
+      "remarks": "Paid By Chetan Patil"
     }
   ],
   "stalls": [
@@ -1389,11 +1405,25 @@
       "amount": "1700",
       "paidTo": "Chirantan More Has paid to Carterer",
       "remarks": "Good Luck payment to Carterer Staff"
+    },
+    {
+      "date": "24 Oct 2026",
+      "item": "Manoj Naik - Decorator",
+      "amount": "65000",
+      "paidTo": "Paid to Manoj Naik",
+      "remarks": "Google Pay"
+    },
+    {
+      "date": "24 Oct 2026",
+      "item": "Mangesh Raorane - DJ",
+      "amount": "35000",
+      "paidTo": "",
+      "remarks": ""
     }
   ],
   "totals": {
-    "contributions": 241979,
+    "contributions": 244979,
     "stallFees": 10800,
-    "expenses": 150422
+    "expenses": 250422
   }
 }
