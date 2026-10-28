@@ -1419,11 +1419,18 @@
       "amount": "35000",
       "paidTo": "",
       "remarks": ""
+    },
+    {
+      "date": "27 Oct 2026",
+      "item": "Vada Pav for All Residents",
+      "amount": "4000",
+      "paidTo": "Maloba Sweets and farsan",
+      "remarks": "Google pay"
     }
   ],
   "totals": {
     "contributions": 244979,
     "stallFees": 10800,
-    "expenses": 250422
+    "expenses": 254422
   }
 }
