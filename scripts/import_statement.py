@@ -96,15 +96,60 @@ def row_value(row, column):
     return str(row.get(column, "") or "").strip()
 
 
-def check_headers(sheet_name, rows, expected):
-    if not rows:
-        raise ValueError(f"The '{sheet_name}' tab is empty.")
-    actual = [str(value).strip().casefold() for _, row in rows[:1] for _, value in sorted(row.items())]
-    expected_normalized = [header.casefold() for header in expected]
-    if actual[: len(expected_normalized)] != expected_normalized:
-        raise ValueError(
-            f"Unexpected headers in '{sheet_name}'. Expected: {', '.join(expected)}."
-        )
+HEADER_ALIASES = {
+    "name": {"name", "donor", "donor name", "contributor", "contributor name", "person", "stallholder", "stall owner"},
+    "flat": {"flat", "flat no", "flat number", "flatno", "unit", "unit no", "apartment"},
+    "amount": {"amount", "amount paid", "payment", "paid amount", "total amount", "amount inr", "inr"},
+    "date": {"date", "payment date", "transaction date"},
+    "time": {"time", "payment time", "transaction time"},
+    "remarks": {"remarks", "remark", "notes", "note", "comments"},
+    "item": {"particular", "particulars", "item", "expense", "expense item", "details", "description"},
+    "paidTo": {"paid to", "paidto", "payee", "vendor", "recipient"},
+}
+
+
+def normalize_header(value):
+    return re.sub(r"[^a-z0-9]+", " ", str(value or "").casefold()).strip()
+
+
+def header_map(row):
+    aliases = {
+        normalize_header(alias): field
+        for field, values in HEADER_ALIASES.items()
+        for alias in values
+    }
+    found = {}
+    for column, value in row.items():
+        normalized = normalize_header(value)
+        field = aliases.get(normalized)
+        if field is None:
+            if normalized.startswith("amount ") or normalized.startswith("total amount "):
+                field = "amount"
+            elif normalized.startswith("date "):
+                field = "date"
+            elif normalized.startswith("time "):
+                field = "time"
+            elif normalized.startswith("name "):
+                field = "name"
+        if field and field not in found:
+            found[field] = column
+    return found
+
+
+def find_header(rows):
+    # Allow a title or blank rows above the actual column headings.
+    for index, (row_number, row) in enumerate(rows[:10]):
+        columns = header_map(row)
+        if {"amount", "date"}.issubset(columns) and (
+            "name" in columns or "item" in columns
+        ):
+            return index, columns
+    return None, {}
+
+
+def value_for(row, columns, field):
+    column = columns.get(field)
+    return row_value(row, column) if column is not None else ""
 
 
 def parse_date(value, sheet_name, row_number):
@@ -156,84 +201,99 @@ def parse_time(value):
 
 
 def parse_rows(sheets):
-    required_sheets = {"Total Receipts", "Stall Payment", "Total Expenses"}
-    missing = required_sheets - sheets.keys()
-    if missing:
-        raise ValueError(f"Missing workbook tabs: {', '.join(sorted(missing))}.")
+    incoming_sheets = []
+    expense_sheets = []
+    unrecognized = []
+    for sheet_name, rows in sheets.items():
+        header_index, columns = find_header(rows)
+        if header_index is None:
+            unrecognized.append(sheet_name)
+            continue
+        if "name" in columns and {"amount", "date"}.issubset(columns):
+            incoming_sheets.append((sheet_name, rows, header_index, columns))
+        elif "item" in columns and {"amount", "date"}.issubset(columns):
+            expense_sheets.append((sheet_name, rows, header_index, columns))
 
-    receipt_rows = sheets["Total Receipts"]
-    stall_rows = sheets["Stall Payment"]
-    expense_rows = sheets["Total Expenses"]
-    check_headers("Total Receipts", receipt_rows, ["Name", "Flat No", "Amount", "Date", "Time", "Remarks"])
-    check_headers("Stall Payment", stall_rows, ["Name", "Flat No", "Amount", "Date", "Time", "Remarks"])
-    check_headers("Total Expenses", expense_rows, ["Date", "Particular", "Amount", "Paid to", "Remarks"])
+    if not incoming_sheets:
+        raise ValueError(
+            "Could not find an incoming payments tab. Include columns for Name, Amount, and Date."
+        )
+    if not expense_sheets:
+        raise ValueError(
+            "Could not find an expenses tab. Include columns for Particular/Item, Amount, and Date."
+        )
+
+    # Stalls keep their own dashboard total. Other incoming tabs (for example,
+    # owner registrations) are included in contributions.
+    def is_stall(sheet):
+        return "stall" in normalize_header(sheet[0]).split()
 
     receipts = []
-    for row_number, row in receipt_rows[1:]:
-        if not any(row_value(row, col) for col in range(1, 7)):
-            continue
-        name, amount, date = row_value(row, 1), row_value(row, 3), row_value(row, 4)
-        if not name or not amount or not date:
-            raise ValueError(f"Incomplete receipt in 'Total Receipts' row {row_number}.")
-        remarks = row_value(row, 6)
-        if name.casefold() == "anonymous":
-            remarks = ""
-        receipts.append({
-            "name": name,
-            "flat": row_value(row, 2),
-            "amount": parse_amount(amount, "Total Receipts", row_number),
-            "date": parse_date(date, "Total Receipts", row_number),
-            "time": parse_time(row_value(row, 5)),
-            "remarks": remarks,
-        })
-
     stalls = []
-    for row_number, row in stall_rows[1:]:
-        if not any(row_value(row, col) for col in range(1, 7)):
-            continue
-        name, amount, date = row_value(row, 1), row_value(row, 3), row_value(row, 4)
-        if not name or not amount or not date:
-            raise ValueError(f"Incomplete stall payment in 'Stall Payment' row {row_number}.")
-        stalls.append({
-            "name": name,
-            "flat": row_value(row, 2),
-            "amount": parse_amount(amount, "Stall Payment", row_number),
-            "date": parse_date(date, "Stall Payment", row_number),
-            "time": parse_time(row_value(row, 5)),
-            "remarks": row_value(row, 6),
-        })
+    for sheet_name, rows, header_index, columns in incoming_sheets:
+        destination = stalls if is_stall((sheet_name,)) else receipts
+        for row_number, row in rows[header_index + 1:]:
+            name = value_for(row, columns, "name")
+            amount = value_for(row, columns, "amount")
+            date = value_for(row, columns, "date")
+            if not any((name, amount, date)):
+                continue
+            if not name or not amount or not date:
+                raise ValueError(f"Incomplete payment in '{sheet_name}' row {row_number}.")
+            remarks = value_for(row, columns, "remarks")
+            if name.casefold() == "anonymous":
+                remarks = ""
+            destination.append({
+                "name": name,
+                "flat": value_for(row, columns, "flat"),
+                "amount": parse_amount(amount, sheet_name, row_number),
+                "date": parse_date(date, sheet_name, row_number),
+                "time": parse_time(value_for(row, columns, "time")),
+                "remarks": remarks,
+            })
 
     expenses = []
     reported_expense_total = None
-    for row_number, row in expense_rows[1:]:
-        item = row_value(row, 2)
-        amount, date = row_value(row, 3), row_value(row, 1)
-        if item.casefold() == "total expenses":
-            if amount:
-                reported_expense_total = parse_amount(amount, "Total Expenses", row_number)
-            continue
-        if not any(row_value(row, col) for col in range(1, 6)):
-            continue
-        if not item or not amount or not date:
-            raise ValueError(f"Incomplete expense in 'Total Expenses' row {row_number}.")
-        expenses.append({
-            "date": parse_date(date, "Total Expenses", row_number),
-            "item": item,
-            "amount": parse_amount(amount, "Total Expenses", row_number),
-            "paidTo": row_value(row, 4),
-            "remarks": row_value(row, 5),
-        })
+    for sheet_name, rows, header_index, columns in expense_sheets:
+        for row_number, row in rows[header_index + 1:]:
+            item = value_for(row, columns, "item")
+            amount = value_for(row, columns, "amount")
+            date = value_for(row, columns, "date")
+            if normalize_header(item) == "total expenses":
+                if amount:
+                    try:
+                        reported_expense_total = Decimal(amount.replace(",", "").strip())
+                    except InvalidOperation as error:
+                        raise ValueError(
+                            f"Invalid amount in '{sheet_name}' row {row_number}: {amount!r}."
+                        ) from error
+                    if reported_expense_total < 0:
+                        raise ValueError("The reported expense total cannot be negative.")
+                continue
+            if not any((item, amount, date)):
+                continue
+            if not item or not amount or not date:
+                raise ValueError(f"Incomplete expense in '{sheet_name}' row {row_number}.")
+            expenses.append({
+                "date": parse_date(date, sheet_name, row_number),
+                "item": item,
+                "amount": parse_amount(amount, sheet_name, row_number),
+                "paidTo": value_for(row, columns, "paidTo"),
+                "remarks": value_for(row, columns, "remarks"),
+            })
 
     totals = {
-        "contributions": sum(Decimal(row["amount"]) for row in receipts),
-        "stallFees": sum(Decimal(row["amount"]) for row in stalls),
-        "expenses": sum(Decimal(row["amount"]) for row in expenses),
+        "contributions": sum((Decimal(row["amount"]) for row in receipts), Decimal(0)),
+        "stallFees": sum((Decimal(row["amount"]) for row in stalls), Decimal(0)),
+        "expenses": sum((Decimal(row["amount"]) for row in expenses), Decimal(0)),
     }
-    if reported_expense_total is not None and totals["expenses"] != Decimal(reported_expense_total):
+    if reported_expense_total is not None and totals["expenses"] != reported_expense_total:
         raise ValueError(
             f"Expense rows total {totals['expenses']}, but the workbook's Total Expenses row says {reported_expense_total}."
         )
     totals = {key: int(value) if value == value.to_integral_value() else float(value) for key, value in totals.items()}
+    if unrecognized:
+        print(f"Skipped tabs without recognizable payment headers: {', '.join(unrecognized)}", file=sys.stderr)
     return {"receipts": receipts, "stalls": stalls, "expenses": expenses, "totals": totals}
 
 

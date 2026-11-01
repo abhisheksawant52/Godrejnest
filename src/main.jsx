@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './styles.css';
 const events = Object.values(import.meta.glob('./events/*.json', { eager: true, import: 'default' }))
   .filter(event => event.id !== 'navratri-day-contribution-statement-2026')
-  .sort((a, b) => a.name.localeCompare(b.name));
+  .sort((a, b) => a.id === 'cricket-2026' ? -1 : b.id === 'cricket-2026' ? 1 : a.name.localeCompare(b.name));
 
 const money = value => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
