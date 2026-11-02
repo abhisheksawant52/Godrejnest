@@ -48,6 +48,11 @@ body{font-size:16px;color:#173b2a}
 .donor-table th{padding:12px 13px;color:#145e35;font-size:10px;white-space:nowrap;border-bottom:1px solid #c8e8d1}
 .donor-table td{padding:11px 13px;border-bottom:1px solid #e7f1e8;color:#294c35;font-size:13px;vertical-align:top}
 .donor-table tbody tr:nth-child(even){background:#f5fbf6}
+.upload-button{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:0 11px;border:1px solid #d9e6d8;border-radius:5px;background:#f2f7ef;color:#356248;font-size:10px;font-weight:600;cursor:pointer;white-space:nowrap}
+.upload-button:hover{background:#e7f0e5}
+.upload-button input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}
+.import-status{margin:8px 0 0;padding:9px 12px;border:1px solid #dbe9d8;border-radius:5px;background:#f3f8f0;color:#496849;font-size:11px}
+@media(max-width:780px){.topbar-right{gap:9px}.upload-button{font-size:9px;padding:0 8px}.import-status{font-size:10px}}
 .donor-table tbody tr:hover{background:#eaf8ed}
 .donor-table .donor-name-cell{font-weight:700;color:#17482d;min-width:210px}
 .donor-table .donor-amount{font-weight:700;color:#145e35;white-space:nowrap}

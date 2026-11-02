@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "scripts": { "dev": "vite", "build": "node ./node_modules/vite/bin/vite.js build", "preview": "vite preview", "import:statement": "python ./scripts/import_statement.py" },
+  "scripts": { "dev": "vite", "build": "node ./node_modules/vite/bin/vite.js build", "preview": "vite preview", "import:statement": "node ./scripts/import_and_build.js" },
   "dependencies": { "@vitejs/plugin-react": "latest", "vite": "latest", "react": "latest", "react-dom": "latest" },
   "devDependencies": {}
 }

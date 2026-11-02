@@ -245,6 +245,7 @@ def parse_rows(sheets):
                 remarks = ""
             destination.append({
                 "name": name,
+                "sourceSheet": sheet_name,
                 "flat": value_for(row, columns, "flat"),
                 "amount": parse_amount(amount, sheet_name, row_number),
                 "date": parse_date(date, sheet_name, row_number),
@@ -275,6 +276,7 @@ def parse_rows(sheets):
             if not item or not amount or not date:
                 raise ValueError(f"Incomplete expense in '{sheet_name}' row {row_number}.")
             expenses.append({
+                "sourceSheet": sheet_name,
                 "date": parse_date(date, sheet_name, row_number),
                 "item": item,
                 "amount": parse_amount(amount, sheet_name, row_number),
@@ -294,7 +296,13 @@ def parse_rows(sheets):
     totals = {key: int(value) if value == value.to_integral_value() else float(value) for key, value in totals.items()}
     if unrecognized:
         print(f"Skipped tabs without recognizable payment headers: {', '.join(unrecognized)}", file=sys.stderr)
-    return {"receipts": receipts, "stalls": stalls, "expenses": expenses, "totals": totals}
+    return {
+        "sourceSheets": list(sheets),
+        "receipts": receipts,
+        "stalls": stalls,
+        "expenses": expenses,
+        "totals": totals,
+    }
 
 
 def main():

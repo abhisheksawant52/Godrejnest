@@ -71,6 +71,7 @@ function parseRows(rows, sheetName) {
   const entries = [];
   for (const row of rows.slice(headerAt + 1)) {
     const name = get(row, 'name'), item = get(row, 'item'), amount = get(row, 'amount'), date = get(row, 'date');
+    if (normalize(item) === 'total expenses') continue;
     if (!name && !item && !amount && !date) continue;
     if (!amount || !date || (!name && !item)) throw new Error(`Incomplete payment row in sheet “${sheetName}”.`);
     const numericAmount = Number(amount.replace(/[₹,\s]/g, ''));
@@ -83,8 +84,8 @@ function parseRows(rows, sheetName) {
     }
     if (!Number.isFinite(parsedDate.getTime())) throw new Error(`Invalid date in sheet “${sheetName}”: ${date}`);
     const normalizedDate = `${parsedDate.getUTCDate()} ${parsedDate.toLocaleString('en-GB', {month:'short', timeZone:'UTC'})} ${parsedDate.getUTCFullYear()}`;
-    if (columns.name !== undefined) entries.push({name, flat:get(row,'flat'), amount:String(numericAmount), date:normalizedDate, time:get(row,'time'), remarks:name.toLowerCase()==='anonymous'?'':get(row,'remarks')});
-    else entries.push({date:normalizedDate, item, amount:String(numericAmount), paidTo:get(row,'paidTo'), remarks:get(row,'remarks')});
+    if (columns.name !== undefined) entries.push({name, sourceSheet:sheetName, flat:get(row,'flat'), amount:String(numericAmount), date:normalizedDate, time:get(row,'time'), remarks:name.toLowerCase()==='anonymous'?'':get(row,'remarks')});
+    else entries.push({date:normalizedDate, item, sourceSheet:sheetName, amount:String(numericAmount), paidTo:get(row,'paidTo'), remarks:get(row,'remarks')});
   }
   return entries;
 }
@@ -98,6 +99,7 @@ export async function importWorkbook(file) {
   const sharedDoc = files.has('xl/sharedStrings.xml') ? xml(files.get('xl/sharedStrings.xml')) : null;
   const shared = sharedDoc ? [...sharedDoc.getElementsByTagNameNS(MAIN, 'si')].map(node => [...node.getElementsByTagNameNS(MAIN, 't')].map(text => text.textContent).join('')) : [];
   const receipts = [], stalls = [], expenses = [];
+  let hasExpenseSheet = false;
   const sheets = [...workbook.getElementsByTagNameNS(MAIN, 'sheet')];
   for (const sheet of sheets) {
     const name = sheet.getAttribute('name');
@@ -115,16 +117,16 @@ export async function importWorkbook(file) {
     });
     const records = parseRows(rows, name);
     if (!records) continue;
-    if (records.length && 'item' in records[0]) expenses.push(...records);
+    if ((records.length && 'item' in records[0]) || /expense/i.test(name)) { hasExpenseSheet = true; expenses.push(...records); }
     else if (/stall/i.test(name)) stalls.push(...records);
     else receipts.push(...records);
   }
   if (!receipts.length && !stalls.length) throw new Error('No receipt sheets found. Include Name, Amount, and Date columns.');
-  if (!expenses.length) throw new Error('No expense sheet found. Include Particular/Item, Amount, and Date columns.');
+  if (!hasExpenseSheet) throw new Error('No expense sheet found. Include Particular/Item, Amount, and Date columns.');
   const sum = records => records.reduce((total, row) => total + Number(row.amount), 0);
   const stem = file.name.replace(/\.xlsx$/i, '').replace(/[_-]+/g, ' ').trim();
   const name = stem.replace(/\b\w/g, letter => letter.toUpperCase());
   const year = Number(name.match(/(?:19|20)\d{2}/)?.[0]) || new Date().getFullYear();
   const id = `${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Date.now().toString(36)}`;
-  return {id, name, year, receipts, stalls, expenses, totals:{contributions:sum(receipts), stallFees:sum(stalls), expenses:sum(expenses)}};
+  return {id, name, year, sourceSheets:sheets.map(sheet=>sheet.getAttribute('name')), receipts, stalls, expenses, totals:{contributions:sum(receipts), stallFees:sum(stalls), expenses:sum(expenses)}};
 }

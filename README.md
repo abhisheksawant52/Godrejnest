@@ -20,11 +20,11 @@ npm run build
 npm run preview
 ```
 
-The Vercel project configuration is in `vercel.json`. Deploy the built site after adding or updating event data. The live static site does not accept workbook uploads.
+The Vercel project configuration is in `vercel.json`. Event JSON files are bundled into the deployed site. The dashboard also has an **Import Excel** button: imported events are saved in that browser's local storage and remain available there after reload. They are not uploaded to the server or shared with other visitors. To publish an event for everyone, use the command-line importer below and deploy the updated site.
 
 ## Add an event from Excel
 
-Each workbook must contain these worksheet tabs and headers:
+Each workbook should contain worksheets with recognizable names and headers:
 
 - `Total Receipts`: `Name`, `Flat No`, `Amount`, `Date`, `Time`, `Remarks`
 - `Stall Payment`: `Name`, `Flat No`, `Amount`, `Date`, `Time`, `Remarks`
@@ -36,17 +36,22 @@ Import a workbook from PowerShell:
 npm run import:statement -- "C:\path\to\Diwali_2026.xlsx" diwali-2026 --name "Diwali 2026"
 ```
 
-This creates `src/events/diwali-2026.json`. The event selector discovers JSON files in that folder automatically. Run a production build and deploy for the event to appear on the published site.
+This creates or refreshes `src/events/diwali-2026.json` and automatically runs a production build, updating the local website files in `dist/`. The event selector discovers JSON files in `src/events/` automatically. Deploy the updated site to publish the event.
 
-The event ID is a lowercase slug made of letters, numbers, and hyphens. Reusing an ID updates that event's JSON file. If omitted, the importer generates an ID from the workbook filename. The display name is optional and defaults to a title-cased version of the ID. The chart year is read from the display name or ID; if neither includes a year, the current year is used.
+The event ID is a lowercase slug made of letters, numbers, and hyphens. Reusing an ID updates that event's JSON file rather than adding a duplicate event. If omitted, the importer generates an ID from the workbook filename. The display name is optional and defaults to a title-cased version of the ID. The chart year is read from the display name or ID; if neither includes a year, the current year is used.
+
+The importer reads every worksheet tab in the workbook. It identifies incoming payment tabs from their `Name`, `Amount`, and `Date` headers, identifies expense tabs from `Particular`/`Item`, `Amount`, and `Date`, and separates incoming tabs whose names contain “stall” into stall receipts. Other incoming tabs (including `Owner Registration Payment`) are included in contributions. Extra tabs without matching ledger headers are skipped. Each imported row retains its source tab name; the contribution register shows it in the **Source Sheet** column and expense details include it. The workbook tab names are therefore used both to classify data and to show its origin on the dashboard.
 
 For example, to import or refresh the existing Navratri event, reuse its `navratri-2026` ID. Reusing the ID updates the existing event instead of creating a second event from the workbook filename:
 
 ```powershell
 npm run import:statement -- "C:\Users\Abhishek\OneDrive\Desktop\Cultural Godrej Nest\Navratri_Day Contribution Statement 2026.xlsx" navratri-2026 --name "Navratri 2026"
+npm run import:statement -- "C:\Users\Abhishek\OneDrive\Desktop\Cultural Godrej Nest\Cricket Contribution Statement 2026.xlsx" cricket-2026 --name "Cricket 2026"
 ```
 
 The importer checks for the required tabs and headers, validates dates and positive amounts, calculates totals, and stops if the expense rows do not match the workbook's stated expense total. It keeps the anonymous donor label and omits that receipt's free-text remark. Review the generated JSON before building and deploying.
+
+The dashboard upload accepts `.xlsx` workbooks directly. It reads worksheet names to identify stall payment sheets (a tab name containing “stall”), other incoming receipt sheets, and expense sheets. The event name comes from the workbook filename. Sheets need headers for `Name`, `Amount`, and `Date` for incoming payments, or `Particular`/`Item`, `Amount`, and `Date` for expenses. Imported browser data stays in that browser's local storage; use the CLI importer when the event needs to be included in a public deployment.
 
 ## Event data format
 

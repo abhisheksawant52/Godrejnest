@@ -2,9 +2,15 @@
   "id": "cricket-2026",
   "name": "Cricket 2026",
   "year": 2026,
+  "sourceSheets": [
+    "Total Receipts",
+    "Owner Registration Payment",
+    "Total Expenses"
+  ],
   "receipts": [
     {
       "name": "Funds From Last Navratri Celebration 2026",
+      "sourceSheet": "Total Receipts",
       "flat": "",
       "amount": "1357",
       "date": "1 Nov 2026",
@@ -13,6 +19,7 @@
     },
     {
       "name": "Deepak Biyani",
+      "sourceSheet": "Total Receipts",
       "flat": "B-404",
       "amount": "600",
       "date": "2 Nov 2026",
@@ -21,6 +28,7 @@
     },
     {
       "name": "Mangesh Mathe",
+      "sourceSheet": "Total Receipts",
       "flat": "C-1503",
       "amount": "600",
       "date": "2 Nov 2026",
@@ -29,6 +37,7 @@
     },
     {
       "name": "Preetam Surana",
+      "sourceSheet": "Owner Registration Payment",
       "flat": "C / 1302",
       "amount": "10000",
       "date": "31 Oct 2026",
@@ -37,6 +46,7 @@
     },
     {
       "name": "Devendra Singh",
+      "sourceSheet": "Owner Registration Payment",
       "flat": "B / 403",
       "amount": "10000",
       "date": "31 Oct 2026",
