@@ -12,6 +12,22 @@
       "remarks": "Funds remainig from Navratri Celebration"
     },
     {
+      "name": "Deepak Biyani",
+      "flat": "B-404",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "2:11 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Mangesh Mathe",
+      "flat": "C-1503",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "2:14 PM",
+      "remarks": "Google pay payment"
+    },
+    {
       "name": "Preetam Surana",
       "flat": "C / 1302",
       "amount": "10000",
@@ -31,7 +47,7 @@
   "stalls": [],
   "expenses": [],
   "totals": {
-    "contributions": 21357,
+    "contributions": 22557,
     "stallFees": 0,
     "expenses": 0
   }
