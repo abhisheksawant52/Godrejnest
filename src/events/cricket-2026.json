@@ -34,6 +34,69 @@
       "date": "2 Nov 2026",
       "time": "2:14 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Sajan Shetty",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-3706",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "5:29 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Ankit Sharma",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-103",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "6:25 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Ashish Dhandar",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1804",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "6:25 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Ruta Biyani",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-404",
+      "amount": "400",
+      "date": "2 Nov 2026",
+      "time": "7:01 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Vikas Devnani",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-2103",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "7:59 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Nikhil Sudrik",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1906",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "8:09 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Kevin B",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1401",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "8:31 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -59,7 +122,7 @@
   "stalls": [],
   "expenses": [],
   "totals": {
-    "contributions": 2557,
+    "contributions": 6557,
     "ownerContributions": 20000,
     "stallFees": 0,
     "expenses": 0
