@@ -98,7 +98,7 @@ export async function importWorkbook(file) {
   const targets = new Map([...relationships.getElementsByTagNameNS(PKG_REL, 'Relationship')].map(rel => [rel.getAttribute('Id'), rel.getAttribute('Target')]));
   const sharedDoc = files.has('xl/sharedStrings.xml') ? xml(files.get('xl/sharedStrings.xml')) : null;
   const shared = sharedDoc ? [...sharedDoc.getElementsByTagNameNS(MAIN, 'si')].map(node => [...node.getElementsByTagNameNS(MAIN, 't')].map(text => text.textContent).join('')) : [];
-  const receipts = [], stalls = [], expenses = [];
+  const receipts = [], ownerContributions = [], stalls = [], expenses = [];
   let hasExpenseSheet = false;
   const sheets = [...workbook.getElementsByTagNameNS(MAIN, 'sheet')];
   for (const sheet of sheets) {
@@ -119,14 +119,15 @@ export async function importWorkbook(file) {
     if (!records) continue;
     if ((records.length && 'item' in records[0]) || /expense/i.test(name)) { hasExpenseSheet = true; expenses.push(...records); }
     else if (/stall/i.test(name)) stalls.push(...records);
+    else if (/owner/i.test(name)) ownerContributions.push(...records);
     else receipts.push(...records);
   }
-  if (!receipts.length && !stalls.length) throw new Error('No receipt sheets found. Include Name, Amount, and Date columns.');
+  if (!receipts.length && !ownerContributions.length && !stalls.length) throw new Error('No receipt sheets found. Include Name, Amount, and Date columns.');
   if (!hasExpenseSheet) throw new Error('No expense sheet found. Include Particular/Item, Amount, and Date columns.');
   const sum = records => records.reduce((total, row) => total + Number(row.amount), 0);
   const stem = file.name.replace(/\.xlsx$/i, '').replace(/[_-]+/g, ' ').trim();
   const name = stem.replace(/\b\w/g, letter => letter.toUpperCase());
   const year = Number(name.match(/(?:19|20)\d{2}/)?.[0]) || new Date().getFullYear();
   const id = `${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Date.now().toString(36)}`;
-  return {id, name, year, sourceSheets:sheets.map(sheet=>sheet.getAttribute('name')), receipts, stalls, expenses, totals:{contributions:sum(receipts), stallFees:sum(stalls), expenses:sum(expenses)}};
+  return {id, name, year, sourceSheets:sheets.map(sheet=>sheet.getAttribute('name')), receipts, ownerContributions, stalls, expenses, totals:{contributions:sum(receipts), ownerContributions:sum(ownerContributions), stallFees:sum(stalls), expenses:sum(expenses)}};
 }

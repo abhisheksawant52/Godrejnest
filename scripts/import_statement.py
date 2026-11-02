@@ -223,15 +223,21 @@ def parse_rows(sheets):
             "Could not find an expenses tab. Include columns for Particular/Item, Amount, and Date."
         )
 
-    # Stalls keep their own dashboard total. Other incoming tabs (for example,
-    # owner registrations) are included in contributions.
+    # Preserve each incoming worksheet category independently.
     def is_stall(sheet):
         return "stall" in normalize_header(sheet[0]).split()
 
     receipts = []
     stalls = []
+    owner_contributions = []
     for sheet_name, rows, header_index, columns in incoming_sheets:
-        destination = stalls if is_stall((sheet_name,)) else receipts
+        normalized_sheet_name = normalize_header(sheet_name)
+        if is_stall((sheet_name,)):
+            destination = stalls
+        elif "owner" in normalized_sheet_name.split():
+            destination = owner_contributions
+        else:
+            destination = receipts
         for row_number, row in rows[header_index + 1:]:
             name = value_for(row, columns, "name")
             amount = value_for(row, columns, "amount")
@@ -286,6 +292,7 @@ def parse_rows(sheets):
 
     totals = {
         "contributions": sum((Decimal(row["amount"]) for row in receipts), Decimal(0)),
+        "ownerContributions": sum((Decimal(row["amount"]) for row in owner_contributions), Decimal(0)),
         "stallFees": sum((Decimal(row["amount"]) for row in stalls), Decimal(0)),
         "expenses": sum((Decimal(row["amount"]) for row in expenses), Decimal(0)),
     }
@@ -299,6 +306,7 @@ def parse_rows(sheets):
     return {
         "sourceSheets": list(sheets),
         "receipts": receipts,
+        "ownerContributions": owner_contributions,
         "stalls": stalls,
         "expenses": expenses,
         "totals": totals,
