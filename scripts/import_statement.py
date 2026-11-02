@@ -340,8 +340,9 @@ def main():
         print(f"Updating existing event data: {output.name}")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Owner contributions: {len(data['ownerContributions'])} entries, INR {data['totals']['ownerContributions']:,}.")
     print(
-        f"Imported {len(data['receipts'])} receipts, {len(data['stalls'])} stall payments, "
+        f"Imported {len(data['receipts'])} Total Receipts, {len(data['stalls'])} stall payments, "
         f"and {len(data['expenses'])} expenses. Totals: contributions ₹{data['totals']['contributions']:,}; "
         f"stall fees ₹{data['totals']['stallFees']:,}; expenses ₹{data['totals']['expenses']:,}."
     )

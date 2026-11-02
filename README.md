@@ -40,7 +40,7 @@ This creates or refreshes `src/events/diwali-2026.json` and automatically runs a
 
 The event ID is a lowercase slug made of letters, numbers, and hyphens. Reusing an ID updates that event's JSON file rather than adding a duplicate event. If omitted, the importer generates an ID from the workbook filename. The display name is optional and defaults to a title-cased version of the ID. The chart year is read from the display name or ID; if neither includes a year, the current year is used.
 
-The importer reads every worksheet tab in the workbook. It identifies incoming payment tabs from their `Name`, `Amount`, and `Date` headers, identifies expense tabs from `Particular`/`Item`, `Amount`, and `Date`, and separates incoming tabs whose names contain “stall” into stall receipts. Other incoming tabs (including `Owner Registration Payment`) are included in contributions. Extra tabs without matching ledger headers are skipped. Each imported row retains its source tab name; the contribution register shows it in the **Source Sheet** column and expense details include it. The workbook tab names are therefore used both to classify data and to show its origin on the dashboard.
+The importer reads every worksheet tab in the workbook. It identifies incoming payment tabs from their `Name`, `Amount`, and `Date` headers, identifies expense tabs from `Particular`/`Item`, `Amount`, and `Date`, and maps `Total Receipts`, `Owner Registration Payment`, and stall tabs into separate categories. `Total received` adds all three income categories. The contribution trend uses `Total Receipts` only, while the owner card uses the owner registration tab only. Extra tabs without matching ledger headers are skipped. Each imported row retains its source tab name; the contribution register shows it in the **Source Sheet** column and expense details include it.
 
 For example, to import or refresh the existing Navratri event, reuse its `navratri-2026` ID. Reusing the ID updates the existing event instead of creating a second event from the workbook filename:
 
@@ -51,7 +51,7 @@ npm run import:statement -- "C:\Users\Abhishek\OneDrive\Desktop\Cultural Godrej 
 
 The importer checks for the required tabs and headers, validates dates and positive amounts, calculates totals, and stops if the expense rows do not match the workbook's stated expense total. It keeps the anonymous donor label and omits that receipt's free-text remark. Review the generated JSON before building and deploying.
 
-The dashboard upload accepts `.xlsx` workbooks directly. It reads worksheet names to identify stall payment sheets (a tab name containing “stall”), other incoming receipt sheets, and expense sheets. The event name comes from the workbook filename. Sheets need headers for `Name`, `Amount`, and `Date` for incoming payments, or `Particular`/`Item`, `Amount`, and `Date` for expenses. Imported browser data stays in that browser's local storage; use the CLI importer when the event needs to be included in a public deployment.
+The dashboard upload accepts `.xlsx` workbooks directly. It reads worksheet names to identify owner registration sheets, stall payment sheets, other incoming receipt sheets, and expense sheets. The event name comes from the workbook filename. Sheets need headers for `Name`, `Amount`, and `Date` for incoming payments, or `Particular`/`Item`, `Amount`, and `Date` for expenses. Imported browser data stays in that browser's local storage; use the CLI importer when the event needs to be included in a public deployment.
 
 ## Event data format
 
@@ -63,10 +63,12 @@ Each file in `src/events/` contains event metadata and the ledger data:
   "name": "Diwali 2026",
   "year": 2026,
   "receipts": [],
+  "ownerContributions": [],
   "stalls": [],
   "expenses": [],
   "totals": {
     "contributions": 0,
+    "ownerContributions": 0,
     "stallFees": 0,
     "expenses": 0
   }

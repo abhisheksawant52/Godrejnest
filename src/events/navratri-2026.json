@@ -1305,6 +1305,7 @@
       "remarks": "Paid By Chetan Patil"
     }
   ],
+  "ownerContributions": [],
   "stalls": [
     {
       "name": "Sangeeta Periwal & Priya Parate",
@@ -1616,6 +1617,7 @@
   ],
   "totals": {
     "contributions": 244979,
+    "ownerContributions": 0,
     "stallFees": 10800,
     "expenses": 254422
   }
