@@ -234,13 +234,22 @@
       "date": "3 Nov 2026",
       "time": "12:22 AM",
       "remarks": "Owner Registration"
+    },
+    {
+      "name": "Ashish Sharma",
+      "sourceSheet": "Owner Registration Payment",
+      "flat": "C-3004",
+      "amount": "2000",
+      "date": "3 Nov 2026",
+      "time": "8:20 PM",
+      "remarks": "Owner Registration Token"
     }
   ],
   "stalls": [],
   "expenses": [],
   "totals": {
     "contributions": 12957,
-    "ownerContributions": 30000,
+    "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 0
   }
