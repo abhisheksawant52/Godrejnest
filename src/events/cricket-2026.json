@@ -97,33 +97,78 @@
       "date": "2 Nov 2026",
       "time": "8:31 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Jian Badiyani",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1401",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "10:07 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Shikhar Tripathi",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-705",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "10:41 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Shreshth Tripathi",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-705",
+      "amount": "300",
+      "date": "2 Nov 2026",
+      "time": "10:41 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Aditya Panchal",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-3303",
+      "amount": "600",
+      "date": "2 Nov 2026",
+      "time": "11:33 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
     {
       "name": "Preetam Surana",
       "sourceSheet": "Owner Registration Payment",
-      "flat": "C / 1302",
+      "flat": "C-1302",
       "amount": "10000",
       "date": "31 Oct 2026",
       "time": "8:12 PM",
-      "remarks": "Owner Regisration"
+      "remarks": "Owner Registration"
     },
     {
       "name": "Devendra Singh",
       "sourceSheet": "Owner Registration Payment",
-      "flat": "B / 403",
+      "flat": "B-403",
       "amount": "10000",
       "date": "31 Oct 2026",
       "time": "8:13 PM",
-      "remarks": "Owner Regisration"
+      "remarks": "Owner Registration"
+    },
+    {
+      "name": "Ketan Chavda",
+      "sourceSheet": "Owner Registration Payment",
+      "flat": "B-203",
+      "amount": "10000",
+      "date": "3 Nov 2026",
+      "time": "12:22 AM",
+      "remarks": "Owner Registration"
     }
   ],
   "stalls": [],
   "expenses": [],
   "totals": {
-    "contributions": 6557,
-    "ownerContributions": 20000,
+    "contributions": 8657,
+    "ownerContributions": 30000,
     "stallFees": 0,
     "expenses": 0
   }
