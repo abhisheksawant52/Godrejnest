@@ -133,6 +133,78 @@
       "date": "2 Nov 2026",
       "time": "11:33 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Sagar Khatav",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-104",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "10:12 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Ankur Mishra",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-802",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "10:15 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Abhishek Sawant",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1101",
+      "amount": "300",
+      "date": "3 Nov 2026",
+      "time": "10:55 AM",
+      "remarks": "Audience T-shirt Payment"
+    },
+    {
+      "name": "Rohit Dhage",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1001",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "11:43 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Vinod Choudhary",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1404",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "2:21 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Simpy Kumari",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-3405",
+      "amount": "400",
+      "date": "3 Nov 2026",
+      "time": "3:16 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Pranav Kumar",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-3405",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "3:16 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Vedant Desai",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-902",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "7:41 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -167,7 +239,7 @@
   "stalls": [],
   "expenses": [],
   "totals": {
-    "contributions": 8657,
+    "contributions": 12957,
     "ownerContributions": 30000,
     "stallFees": 0,
     "expenses": 0
