@@ -205,6 +205,78 @@
       "date": "3 Nov 2026",
       "time": "7:41 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Kavita B",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1401",
+      "amount": "400",
+      "date": "3 Nov 2026",
+      "time": "8:29 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Gaurav S",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-3705",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "9:56 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Pratik Agrawal",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2301/2302",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "10:12 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Yuvika Agrawal",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2301/2302",
+      "amount": "300",
+      "date": "3 Nov 2026",
+      "time": "10:19 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Apurva Agrawal",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2301/2302",
+      "amount": "400",
+      "date": "3 Nov 2026",
+      "time": "10:34 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Radhika Sawant",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1101",
+      "amount": "400",
+      "date": "3 Nov 2026",
+      "time": "11:18 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Dhruvin Patel",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2804",
+      "amount": "300",
+      "date": "3 Nov 2026",
+      "time": "11:30 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Dhaval Vasi",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1004",
+      "amount": "600",
+      "date": "3 Nov 2026",
+      "time": "11:27 PM",
+      "remarks": "Google pay payment but not registered on portal"
     }
   ],
   "ownerContributions": [
@@ -248,7 +320,7 @@
   "stalls": [],
   "expenses": [],
   "totals": {
-    "contributions": 12957,
+    "contributions": 16557,
     "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 0
