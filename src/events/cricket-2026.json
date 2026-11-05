@@ -277,6 +277,33 @@
       "date": "3 Nov 2026",
       "time": "11:27 PM",
       "remarks": "Google pay payment but not registered on portal"
+    },
+    {
+      "name": "Hitendra Patel",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1405",
+      "amount": "600",
+      "date": "4 Nov 2026",
+      "time": "10:52 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Romil",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-3206",
+      "amount": "600",
+      "date": "4 Nov 2026",
+      "time": "6:29 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Abhay Tiwari",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2104",
+      "amount": "600",
+      "date": "4 Nov 2026",
+      "time": "6:44 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -320,7 +347,7 @@
   "stalls": [],
   "expenses": [],
   "totals": {
-    "contributions": 16557,
+    "contributions": 18357,
     "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 0
