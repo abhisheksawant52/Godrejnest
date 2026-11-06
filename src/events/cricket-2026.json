@@ -304,6 +304,60 @@
       "date": "4 Nov 2026",
       "time": "6:44 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Jiyansh Sonwadekar",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1006",
+      "amount": "300",
+      "date": "5 Nov 2026",
+      "time": "5:02 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Chetan Patil",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1002",
+      "amount": "300",
+      "date": "5 Nov 2026",
+      "time": "7:52 PM",
+      "remarks": "Audience T-shirt Payment"
+    },
+    {
+      "name": "Mayank Vakharla",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1801",
+      "amount": "600",
+      "date": "5 Nov 2026",
+      "time": "8:05 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Neha Mishra",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1901",
+      "amount": "400",
+      "date": "5 Nov 2026",
+      "time": "11:32 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Akhil Jha",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1901",
+      "amount": "600",
+      "date": "5 Nov 2026",
+      "time": "11:30 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Anand Sonwadekar",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1006",
+      "amount": "600",
+      "date": "6 Nov 2026",
+      "time": "12:09 AM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -345,11 +399,20 @@
     }
   ],
   "stalls": [],
-  "expenses": [],
+  "expenses": [
+    {
+      "sourceSheet": "Total Expenses",
+      "date": "5 Nov 2026",
+      "item": "Cricket Match Poster in Lift",
+      "amount": "210",
+      "paidTo": "Om Collection 54",
+      "remarks": ""
+    }
+  ],
   "totals": {
-    "contributions": 18357,
+    "contributions": 21157,
     "ownerContributions": 32000,
     "stallFees": 0,
-    "expenses": 0
+    "expenses": 210
   }
 }
