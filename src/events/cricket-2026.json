@@ -276,7 +276,7 @@
       "amount": "600",
       "date": "3 Nov 2026",
       "time": "11:27 PM",
-      "remarks": "Google pay payment but not registered on portal"
+      "remarks": "Google pay payment"
     },
     {
       "name": "Hitendra Patel",
@@ -358,6 +358,69 @@
       "date": "6 Nov 2026",
       "time": "12:09 AM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Chirantan More",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-2203",
+      "amount": "600",
+      "date": "6 Nov 2026",
+      "time": "8:59 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Shivaan Vasi",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1004",
+      "amount": "300",
+      "date": "6 Nov 2026",
+      "time": "9:31 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Arvind Kumar",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1603",
+      "amount": "600",
+      "date": "8 Nov 2026",
+      "time": "11:03 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Payal Panchal",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-3303",
+      "amount": "400",
+      "date": "8 Nov 2026",
+      "time": "3:07 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Suraj Iyer",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1002",
+      "amount": "600",
+      "date": "8 Nov 2026",
+      "time": "10:38 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Bijal Mehta",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-903",
+      "amount": "400",
+      "date": "9 Nov 2026",
+      "time": "10:17 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Siddharth Singh",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-706",
+      "amount": "600",
+      "date": "9 Nov 2026",
+      "time": "10:31 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -410,7 +473,7 @@
     }
   ],
   "totals": {
-    "contributions": 21157,
+    "contributions": 24657,
     "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 210
