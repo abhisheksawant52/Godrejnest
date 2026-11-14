@@ -475,6 +475,78 @@
       "date": "11 Nov 2026",
       "time": "6:15 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Sushil Kumar",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-204",
+      "amount": "600",
+      "date": "12 Nov 2026",
+      "time": "2:30 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Om Pandey",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-2004",
+      "amount": "600",
+      "date": "12 Nov 2026",
+      "time": "5:15 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Emmanuel Fernandes",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1601",
+      "amount": "300",
+      "date": "12 Nov 2026",
+      "time": "8:17 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Lee Fernandes",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1601",
+      "amount": "600",
+      "date": "12 Nov 2026",
+      "time": "8:20 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Nishadh Modak",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1802",
+      "amount": "300",
+      "date": "13 Nov 2026",
+      "time": "2:40 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Swaroop Modak",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1802",
+      "amount": "300",
+      "date": "13 Nov 2026",
+      "time": "2:40 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Niya Kande",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1001",
+      "amount": "300",
+      "date": "13 Nov 2026",
+      "time": "3:08 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Vaibhav Dubey",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-1003",
+      "amount": "600",
+      "date": "13 Nov 2026",
+      "time": "5:18 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -535,7 +607,7 @@
     }
   ],
   "totals": {
-    "contributions": 27657,
+    "contributions": 31257,
     "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 960
