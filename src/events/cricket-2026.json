@@ -547,6 +547,114 @@
       "date": "13 Nov 2026",
       "time": "5:18 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Vijay Modak",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1802",
+      "amount": "600",
+      "date": "14 Nov 2026",
+      "time": "11:00 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Vithoba Jivale",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-3105",
+      "amount": "600",
+      "date": "14 Nov 2026",
+      "time": "10:08 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Atharv Nijhawan",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-804",
+      "amount": "300",
+      "date": "14 Nov 2026",
+      "time": "10:13 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Manak Desarda",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1101",
+      "amount": "600",
+      "date": "14 Nov 2026",
+      "time": "11:05 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Priyanka Desarda",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1101",
+      "amount": "400",
+      "date": "14 Nov 2026",
+      "time": "11:05 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Adhyan Desarda",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1101",
+      "amount": "300",
+      "date": "14 Nov 2026",
+      "time": "11:05 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Pratik Revankar",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-2001",
+      "amount": "600",
+      "date": "15 Nov 2026",
+      "time": "12:30 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Akshay Mathe",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-1503",
+      "amount": "300",
+      "date": "15 Nov 2026",
+      "time": "9:59 AM",
+      "remarks": "Audience T-shirt Payment"
+    },
+    {
+      "name": "Vanaparthi Akshit",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1305",
+      "amount": "600",
+      "date": "15 Nov 2026",
+      "time": "9:30 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Boni Aashish",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1305",
+      "amount": "600",
+      "date": "15 Nov 2026",
+      "time": "9:31 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Suraj Shah",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-2103",
+      "amount": "600",
+      "date": "15 Nov 2026",
+      "time": "10:28 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Ayushman Thakur",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-3606",
+      "amount": "600",
+      "date": "15 Nov 2026",
+      "time": "11:25 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -604,12 +712,20 @@
       "amount": "750",
       "paidTo": "Mahalaxmi Packaging",
       "remarks": ""
+    },
+    {
+      "sourceSheet": "Total Expenses",
+      "date": "15 Nov 2026",
+      "item": "Advance Paid for Turf",
+      "amount": "2000",
+      "paidTo": "Mangesh Mathe",
+      "remarks": "Since he has paid before for turf booking urgently"
     }
   ],
   "totals": {
-    "contributions": 31257,
+    "contributions": 37357,
     "ownerContributions": 32000,
     "stallFees": 0,
-    "expenses": 960
+    "expenses": 2960
   }
 }
