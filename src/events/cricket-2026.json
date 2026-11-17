@@ -655,6 +655,15 @@
       "date": "15 Nov 2026",
       "time": "11:25 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Arun Parab",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-305",
+      "amount": "600",
+      "date": "17 Nov 2026",
+      "time": "11:05 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -677,7 +686,7 @@
       "remarks": "Owner Registration"
     },
     {
-      "name": "Ketan Chavda",
+      "name": "Ketan Chawdaa",
       "sourceSheet": "Owner Registration Payment",
       "flat": "B-203",
       "amount": "10000",
@@ -720,12 +729,20 @@
       "amount": "2000",
       "paidTo": "Mangesh Mathe",
       "remarks": "Since he has paid before for turf booking urgently"
+    },
+    {
+      "sourceSheet": "Total Expenses",
+      "date": "17 Nov 2026",
+      "item": "Navratri Har and fruits",
+      "amount": "400",
+      "paidTo": "Paid to Chetan Patil",
+      "remarks": "Har and fruits purchased by Vinita Son"
     }
   ],
   "totals": {
-    "contributions": 37357,
+    "contributions": 37957,
     "ownerContributions": 32000,
     "stallFees": 0,
-    "expenses": 2960
+    "expenses": 3360
   }
 }
