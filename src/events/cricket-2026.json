@@ -664,6 +664,15 @@
       "date": "17 Nov 2026",
       "time": "11:05 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Anand Dubey",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-2201",
+      "amount": "1200",
+      "date": "18 Nov 2026",
+      "time": "10:37 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -740,7 +749,7 @@
     }
   ],
   "totals": {
-    "contributions": 37957,
+    "contributions": 39157,
     "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 3360
