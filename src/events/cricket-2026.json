@@ -673,6 +673,15 @@
       "date": "18 Nov 2026",
       "time": "10:37 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Prayan Vyas",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-901",
+      "amount": "300",
+      "date": "19 Oct 2026",
+      "time": "9:07 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -746,12 +755,20 @@
       "amount": "400",
       "paidTo": "Paid to Chetan Patil",
       "remarks": "Har and fruits purchased by Vinita Son"
+    },
+    {
+      "sourceSheet": "Total Expenses",
+      "date": "19 Nov 2026",
+      "item": "Wireless Mic for Cultural team",
+      "amount": "1900",
+      "paidTo": "Paid of Amazon",
+      "remarks": "Mic for Cultural team"
     }
   ],
   "totals": {
-    "contributions": 39157,
+    "contributions": 39457,
     "ownerContributions": 32000,
     "stallFees": 0,
-    "expenses": 3360
+    "expenses": 5260
   }
 }
