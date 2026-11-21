@@ -691,6 +691,51 @@
       "date": "20 Nov 2026",
       "time": "8:33 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Brijesh Vishwakarma",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1102",
+      "amount": "600",
+      "date": "21 Nov 2026",
+      "time": "5:55 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Anita Pandey",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-2004",
+      "amount": "400",
+      "date": "21 Nov 2026",
+      "time": "7:21 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Ajeet Pandey",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-2004",
+      "amount": "600",
+      "date": "21 Nov 2026",
+      "time": "7:23 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Shweta Tiwari",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2104",
+      "amount": "400",
+      "date": "21 Nov 2026",
+      "time": "7:29 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Praful Pendurkar",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-3101",
+      "amount": "600",
+      "date": "21 Nov 2026",
+      "time": "10:10 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -772,12 +817,28 @@
       "amount": "1499",
       "paidTo": "Meta sync",
       "remarks": "Website For Auction"
+    },
+    {
+      "sourceSheet": "Total Expenses",
+      "date": "21 Nov 2026",
+      "item": "Sound Box With Mic",
+      "amount": "3000",
+      "paidTo": "Mangesh Raorane",
+      "remarks": "Auction Sound Box"
+    },
+    {
+      "sourceSheet": "Total Expenses",
+      "date": "22 Nov 2026",
+      "item": "Projector Payment",
+      "amount": "2400",
+      "paidTo": "Ganesh Daya",
+      "remarks": "Projector payment"
     }
   ],
   "totals": {
-    "contributions": 39857,
+    "contributions": 42457,
     "ownerContributions": 32000,
     "stallFees": 0,
-    "expenses": 4859
+    "expenses": 10259
   }
 }
