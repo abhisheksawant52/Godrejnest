@@ -736,6 +736,33 @@
       "date": "21 Nov 2026",
       "time": "10:10 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Parsi Kumavat",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2903",
+      "amount": "400",
+      "date": "22 Nov 2026",
+      "time": "11:02 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Swathi Madagula",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2101",
+      "amount": "400",
+      "date": "23 Nov 2026",
+      "time": "11:33 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Yogesh Diwan",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-304",
+      "amount": "600",
+      "date": "23 Nov 2026",
+      "time": "11:33 AM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -836,7 +863,7 @@
     }
   ],
   "totals": {
-    "contributions": 42457,
+    "contributions": 43857,
     "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 10259
