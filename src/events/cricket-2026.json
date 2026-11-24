@@ -763,6 +763,24 @@
       "date": "23 Nov 2026",
       "time": "11:33 AM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Panshul Singh",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-904",
+      "amount": "300",
+      "date": "23 Nov 2026",
+      "time": "7:39 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Shourya Dhanraj",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-1904",
+      "amount": "300",
+      "date": "23 Nov 2026",
+      "time": "8:19 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -863,7 +881,7 @@
     }
   ],
   "totals": {
-    "contributions": 43857,
+    "contributions": 44457,
     "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 10259
