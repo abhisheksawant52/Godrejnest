@@ -781,6 +781,60 @@
       "date": "23 Nov 2026",
       "time": "8:19 PM",
       "remarks": "Google pay payment"
+    },
+    {
+      "name": "Prisha Singh",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-504",
+      "amount": "300",
+      "date": "24 Nov 2026",
+      "time": "2:11 PM",
+      "remarks": "Audience T-shirt Payment"
+    },
+    {
+      "name": "Deepak Singh",
+      "sourceSheet": "Total Receipts",
+      "flat": "C-504",
+      "amount": "300",
+      "date": "24 Nov 2026",
+      "time": "2:14 PM",
+      "remarks": "Audience T-shirt Payment"
+    },
+    {
+      "name": "Hitesh Biyani",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-404",
+      "amount": "600",
+      "date": "24 Nov 2026",
+      "time": "11:40 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Veer Biyani",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-404",
+      "amount": "300",
+      "date": "24 Nov 2026",
+      "time": "11:40 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Jay Biyani",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-404",
+      "amount": "300",
+      "date": "24 Nov 2026",
+      "time": "11:40 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Tia Kumar",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-3405",
+      "amount": "300",
+      "date": "25 Nov 2026",
+      "time": "5:04 PM",
+      "remarks": "Audience T-shirt Payment"
     }
   ],
   "ownerContributions": [
@@ -881,7 +935,7 @@
     }
   ],
   "totals": {
-    "contributions": 44457,
+    "contributions": 46557,
     "ownerContributions": 32000,
     "stallFees": 0,
     "expenses": 10259
