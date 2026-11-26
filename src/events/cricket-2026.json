@@ -869,10 +869,19 @@
       "name": "Ashish Sharma",
       "sourceSheet": "Owner Registration Payment",
       "flat": "C-3004",
-      "amount": "2000",
+      "amount": "10000",
       "date": "3 Nov 2026",
       "time": "8:20 PM",
-      "remarks": "Owner Registration Token"
+      "remarks": "Owner Registration"
+    },
+    {
+      "name": "Abhishek Dubey",
+      "sourceSheet": "Owner Registration Payment",
+      "flat": "A-1704",
+      "amount": "10000",
+      "date": "25 Nov 2026",
+      "time": "9:56 PM",
+      "remarks": "Owner Registration"
     }
   ],
   "stalls": [],
@@ -936,7 +945,7 @@
   ],
   "totals": {
     "contributions": 46557,
-    "ownerContributions": 32000,
+    "ownerContributions": 50000,
     "stallFees": 0,
     "expenses": 10259
   }
