@@ -835,6 +835,105 @@
       "date": "25 Nov 2026",
       "time": "5:04 PM",
       "remarks": "Audience T-shirt Payment"
+    },
+    {
+      "name": "Mansi",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1906",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "11:45 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Yohan Agrawal",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-2006",
+      "amount": "300",
+      "date": "26 Nov 2026",
+      "time": "11:54 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Avani Parab",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-305",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "11:58 AM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Sarla Mishra",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-2301",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "12:06 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Alka Mehta",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-803",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "12:57 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Uma Kedia",
+      "sourceSheet": "Total Receipts",
+      "flat": "A-1402",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "12:58 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Aruna Negi",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1902",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "12:17 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Pooja Kande",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1001",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "12:04 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Akshit",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-1902",
+      "amount": "300",
+      "date": "26 Nov 2026",
+      "time": "12:26 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Leela Biyani",
+      "sourceSheet": "Total Receipts",
+      "flat": "B-404",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "12:06 PM",
+      "remarks": "Google pay payment"
+    },
+    {
+      "name": "Megha Dhandard",
+      "sourceSheet": "Total Receipts",
+      "flat": "D-1804",
+      "amount": "400",
+      "date": "26 Nov 2026",
+      "time": "12-26 PM",
+      "remarks": "Google pay payment"
     }
   ],
   "ownerContributions": [
@@ -944,7 +1043,7 @@
     }
   ],
   "totals": {
-    "contributions": 46557,
+    "contributions": 50757,
     "ownerContributions": 50000,
     "stallFees": 0,
     "expenses": 10259
