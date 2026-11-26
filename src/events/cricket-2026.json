@@ -1040,12 +1040,20 @@
       "amount": "2400",
       "paidTo": "Ganesh Daya",
       "remarks": "Projector payment"
+    },
+    {
+      "sourceSheet": "Total Expenses",
+      "date": "26 Nov 2026",
+      "item": "T-shirt Pre-Payment",
+      "amount": "10000",
+      "paidTo": "Nehalee Shedekar",
+      "remarks": "T-Shirt Vendor"
     }
   ],
   "totals": {
     "contributions": 50757,
     "ownerContributions": 50000,
     "stallFees": 0,
-    "expenses": 10259
+    "expenses": 20259
   }
 }
